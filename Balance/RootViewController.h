@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BalanceViewController.h"
+#import "AssetViewController.h"
+#import "LiabilityViewController.h"
+#import "NewEntryViewController.h"
 
-@interface RootViewController : UIViewController <UIPageViewControllerDelegate>
-
-@property (strong, nonatomic) UIPageViewController *pageViewController;
+@interface RootViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 @end
 

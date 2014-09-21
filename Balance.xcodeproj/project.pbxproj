@@ -10,12 +10,15 @@
 		0FF20F3B19CD8FDF002776F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3A19CD8FDF002776F4 /* main.m */; };
 		0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3D19CD8FDF002776F4 /* AppDelegate.m */; };
 		0FF20F4119CD8FDF002776F4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F4019CD8FDF002776F4 /* RootViewController.m */; };
-		0FF20F4419CD8FDF002776F4 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F4319CD8FDF002776F4 /* DataViewController.m */; };
-		0FF20F4719CD8FDF002776F4 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F4619CD8FDF002776F4 /* ModelController.m */; };
 		0FF20F4A19CD8FDF002776F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF20F4819CD8FDF002776F4 /* Main.storyboard */; };
 		0FF20F4C19CD8FDF002776F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF20F4B19CD8FDF002776F4 /* Images.xcassets */; };
 		0FF20F4F19CD8FDF002776F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF20F4D19CD8FDF002776F4 /* LaunchScreen.xib */; };
 		0FF20F5B19CD8FDF002776F4 /* BalanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F5A19CD8FDF002776F4 /* BalanceTests.m */; };
+		0FF20F6719CDA93C002776F4 /* LiabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F6619CDA93C002776F4 /* LiabilityViewController.m */; };
+		0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F6E19CDAA95002776F4 /* BalanceViewController.m */; };
+		0FF20F7219CDAAC2002776F4 /* AssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F7119CDAAC2002776F4 /* AssetViewController.m */; };
+		0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F7519CDDA86002776F4 /* NewEntryViewController.m */; };
+		0FF20F7A19CDDC5F002776F4 /* NewEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF20F7919CDDC5F002776F4 /* NewEntry.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,16 +39,21 @@
 		0FF20F3D19CD8FDF002776F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0FF20F3F19CD8FDF002776F4 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		0FF20F4019CD8FDF002776F4 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		0FF20F4219CD8FDF002776F4 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
-		0FF20F4319CD8FDF002776F4 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
-		0FF20F4519CD8FDF002776F4 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		0FF20F4619CD8FDF002776F4 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 		0FF20F4919CD8FDF002776F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FF20F4B19CD8FDF002776F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0FF20F4E19CD8FDF002776F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0FF20F5419CD8FDF002776F4 /* BalanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF20F5919CD8FDF002776F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF20F5A19CD8FDF002776F4 /* BalanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceTests.m; sourceTree = "<group>"; };
+		0FF20F6519CDA93C002776F4 /* LiabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiabilityViewController.h; sourceTree = "<group>"; };
+		0FF20F6619CDA93C002776F4 /* LiabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiabilityViewController.m; sourceTree = "<group>"; };
+		0FF20F6D19CDAA95002776F4 /* BalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceViewController.h; sourceTree = "<group>"; };
+		0FF20F6E19CDAA95002776F4 /* BalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceViewController.m; sourceTree = "<group>"; };
+		0FF20F7019CDAAC2002776F4 /* AssetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetViewController.h; sourceTree = "<group>"; };
+		0FF20F7119CDAAC2002776F4 /* AssetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetViewController.m; sourceTree = "<group>"; };
+		0FF20F7419CDDA86002776F4 /* NewEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEntryViewController.h; sourceTree = "<group>"; };
+		0FF20F7519CDDA86002776F4 /* NewEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEntryViewController.m; sourceTree = "<group>"; };
+		0FF20F7919CDDC5F002776F4 /* NewEntry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewEntry.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +99,11 @@
 				0FF20F3D19CD8FDF002776F4 /* AppDelegate.m */,
 				0FF20F3F19CD8FDF002776F4 /* RootViewController.h */,
 				0FF20F4019CD8FDF002776F4 /* RootViewController.m */,
-				0FF20F4219CD8FDF002776F4 /* DataViewController.h */,
-				0FF20F4319CD8FDF002776F4 /* DataViewController.m */,
-				0FF20F4519CD8FDF002776F4 /* ModelController.h */,
-				0FF20F4619CD8FDF002776F4 /* ModelController.m */,
 				0FF20F4819CD8FDF002776F4 /* Main.storyboard */,
+				0FF20F7319CDDA76002776F4 /* NewEntry */,
+				0FF20F6C19CDAA8A002776F4 /* Balance */,
+				0FF20F6819CDA94B002776F4 /* Assets */,
+				0FF20F6419CDA912002776F4 /* Liabilities */,
 				0FF20F4B19CD8FDF002776F4 /* Images.xcassets */,
 				0FF20F4D19CD8FDF002776F4 /* LaunchScreen.xib */,
 				0FF20F3819CD8FDF002776F4 /* Supporting Files */,
@@ -127,6 +135,43 @@
 				0FF20F5919CD8FDF002776F4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0FF20F6419CDA912002776F4 /* Liabilities */ = {
+			isa = PBXGroup;
+			children = (
+				0FF20F6519CDA93C002776F4 /* LiabilityViewController.h */,
+				0FF20F6619CDA93C002776F4 /* LiabilityViewController.m */,
+			);
+			path = Liabilities;
+			sourceTree = "<group>";
+		};
+		0FF20F6819CDA94B002776F4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0FF20F7019CDAAC2002776F4 /* AssetViewController.h */,
+				0FF20F7119CDAAC2002776F4 /* AssetViewController.m */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		0FF20F6C19CDAA8A002776F4 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				0FF20F6D19CDAA95002776F4 /* BalanceViewController.h */,
+				0FF20F6E19CDAA95002776F4 /* BalanceViewController.m */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		0FF20F7319CDDA76002776F4 /* NewEntry */ = {
+			isa = PBXGroup;
+			children = (
+				0FF20F7919CDDC5F002776F4 /* NewEntry.storyboard */,
+				0FF20F7419CDDA86002776F4 /* NewEntryViewController.h */,
+				0FF20F7519CDDA86002776F4 /* NewEntryViewController.m */,
+			);
+			path = NewEntry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +256,7 @@
 			files = (
 				0FF20F4A19CD8FDF002776F4 /* Main.storyboard in Resources */,
 				0FF20F4F19CD8FDF002776F4 /* LaunchScreen.xib in Resources */,
+				0FF20F7A19CDDC5F002776F4 /* NewEntry.storyboard in Resources */,
 				0FF20F4C19CD8FDF002776F4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,10 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FF20F4419CD8FDF002776F4 /* DataViewController.m in Sources */,
+				0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */,
+				0FF20F7219CDAAC2002776F4 /* AssetViewController.m in Sources */,
+				0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */,
 				0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */,
-				0FF20F4719CD8FDF002776F4 /* ModelController.m in Sources */,
 				0FF20F3B19CD8FDF002776F4 /* main.m in Sources */,
+				0FF20F6719CDA93C002776F4 /* LiabilityViewController.m in Sources */,
 				0FF20F4119CD8FDF002776F4 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
