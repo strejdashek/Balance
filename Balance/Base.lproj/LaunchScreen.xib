@@ -16,12 +16,12 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYB-lO-c1v">
-                    <rect key="frame" x="180" y="418" width="200" height="132"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HmL-Fp-R0P">
+                    <rect key="frame" x="290" y="444" width="90" height="60"/>
                     <color key="backgroundColor" red="0.24980379250000001" green="0.78587105349999997" blue="0.2827725324" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t5F-Fn-hYo">
-                    <rect key="frame" x="388" y="418" width="200" height="132"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IIb-Xs-fEe">
+                    <rect key="frame" x="388" y="444" width="90" height="60"/>
                     <color key="backgroundColor" red="1" green="0.2689875867" blue="0.24833761060000001" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>

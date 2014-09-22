@@ -10,36 +10,62 @@
 
 @interface NewEntryViewController ()
 
+//outlets
+@property (weak, nonatomic) IBOutlet UIButton *assetBtn;
+@property (weak, nonatomic) IBOutlet UIButton *liabilityBtn;
+@property (weak, nonatomic) IBOutlet UILabel *screenTitle;
+
+
 //action methods
 - (IBAction)doneBtnTap:(id)sender;
+- (IBAction)cancelBtnTap:(id)sender;
+- (IBAction)liabilityBtnTap:(id)sender;
+- (IBAction)assetBtnTap:(id)sender;
 
 @end
 
 @implementation NewEntryViewController
 
-- (void)viewDidLoad {
+#pragma mark - View Lifecycle
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - Action Methods
 - (IBAction)doneBtnTap:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)cancelBtnTap:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)liabilityBtnTap:(id)sender
+{
+    [self.assetBtn setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateNormal];
+    [self.liabilityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [self.assetBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
+    [self.liabilityBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+    
+    [self.screenTitle setText:@"Liability"];
+}
+- (IBAction)assetBtnTap:(id)sender
+{
+    [self.liabilityBtn setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateNormal];
+    [self.assetBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [self.liabilityBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
+    [self.assetBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+    
+    [self.screenTitle setText:@"Asset"];
 }
 @end

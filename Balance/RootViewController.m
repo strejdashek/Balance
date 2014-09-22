@@ -12,6 +12,9 @@
 
 //outlets
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIView *leftGreenView;
+@property (weak, nonatomic) IBOutlet UIView *rightRedView;
+
 
 //private properties
 @property (strong, nonatomic) UIPageViewController *pageViewController;
@@ -45,21 +48,28 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    //make animation and..
-    
-    
-    //add pageviewcontroller
-    [self addChildViewController:self.pageViewController];
-    [self.view addSubview:self.pageViewController.view];
-    [self.pageViewController didMoveToParentViewController:self];
-    
-    [self.view bringSubviewToFront:self.pageControl];
+    [UIView animateWithDuration:1.5
+                          delay:1.0
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         
+                         self.leftGreenView.frame = CGRectMake(76, 349, 200, 132);
+                         self.rightRedView.frame = CGRectMake(492, 349, 200, 132);
+                     }
+                     completion:^(BOOL finished){
+                         
+                         //add pageviewcontroller
+                         [self addChildViewController:self.pageViewController];
+                         [self.view addSubview:self.pageViewController.view];
+                         [self.pageViewController didMoveToParentViewController:self];
+                         
+                         [self.view bringSubviewToFront:self.pageControl];
+                     }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UIPageViewController DataSource

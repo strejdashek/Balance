@@ -9,6 +9,7 @@
 #import "BalanceViewController.h"
 
 @interface BalanceViewController ()
+
 @property (weak, nonatomic) IBOutlet UIView *totalBalanceView;
 
 @end

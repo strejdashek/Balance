@@ -10,7 +10,12 @@
 
 @interface AssetViewController ()
 
+//outlets
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewAssets;
+
+//action methods
+@property (weak, nonatomic) IBOutlet UIButton *deleteCell;
+
 
 @end
 
@@ -42,5 +47,9 @@
     
     return cell;
 }
+
+#pragma mark - Action Methods
+
+
 
 @end
