@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIView *leftGreenView;
 @property (weak, nonatomic) IBOutlet UIView *rightRedView;
 
-
 //private properties
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *viewControllers;
