@@ -38,8 +38,10 @@
     self.pageViewController.delegate = self;
     
     BalanceViewController *balanceVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BalanceViewController"];
-    AssetViewController *assetVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AssetViewController"];
-    LiabilityViewController *liabilityVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LiabilityViewController"];
+    ItemsViewController *assetVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemsViewController"];
+    [assetVC setItemsType:AssetType];
+    ItemsViewController *liabilityVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemsViewController"];
+    [liabilityVC setItemsType:LiabilityType];
     
     self.viewControllers = [[NSArray alloc] initWithObjects:assetVC,balanceVC,liabilityVC,nil];
     [self.pageViewController setViewControllers:@[balanceVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEDDC6319D345E700E045D4 /* ItemsViewController.m */; };
 		0FF20F3B19CD8FDF002776F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3A19CD8FDF002776F4 /* main.m */; };
 		0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3D19CD8FDF002776F4 /* AppDelegate.m */; };
 		0FF20F4119CD8FDF002776F4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F4019CD8FDF002776F4 /* RootViewController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FEDDC6219D345E700E045D4 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
+		0FEDDC6319D345E700E045D4 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
 		0FF20F3519CD8FDF002776F4 /* Balance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF20F3919CD8FDF002776F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF20F3A19CD8FDF002776F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -74,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FEDDC6119D345C900E045D4 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				0FEDDC6219D345E700E045D4 /* ItemsViewController.h */,
+				0FEDDC6319D345E700E045D4 /* ItemsViewController.m */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		0FF20F2C19CD8FDF002776F4 = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +112,9 @@
 				0FF20F3F19CD8FDF002776F4 /* RootViewController.h */,
 				0FF20F4019CD8FDF002776F4 /* RootViewController.m */,
 				0FF20F4819CD8FDF002776F4 /* Main.storyboard */,
-				0FF20F7319CDDA76002776F4 /* NewEntry */,
 				0FF20F6C19CDAA8A002776F4 /* Balance */,
+				0FEDDC6119D345C900E045D4 /* Items */,
+				0FF20F7319CDDA76002776F4 /* NewEntry */,
 				0FF20F6819CDA94B002776F4 /* Assets */,
 				0FF20F6419CDA912002776F4 /* Liabilities */,
 				0FF20F4B19CD8FDF002776F4 /* Images.xcassets */,
@@ -276,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */,
+				0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */,
 				0FF20F7219CDAAC2002776F4 /* AssetViewController.m in Sources */,
 				0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */,
 				0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */,
@@ -474,6 +488,7 @@
 				0FF20F6019CD8FDF002776F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0FF20F6119CD8FDF002776F4 /* Build configuration list for PBXNativeTarget "BalanceTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +497,7 @@
 				0FF20F6319CD8FDF002776F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

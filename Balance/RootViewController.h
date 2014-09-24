@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BalanceViewController.h"
-#import "AssetViewController.h"
-#import "LiabilityViewController.h"
+#import "ItemsViewController.h"
 #import "NewEntryViewController.h"
 
 @interface RootViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
