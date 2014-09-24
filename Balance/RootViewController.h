@@ -11,7 +11,7 @@
 #import "ItemsViewController.h"
 #import "NewEntryViewController.h"
 
-@interface RootViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@interface RootViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate,NewEntryVCDataSource>
 
 @end
 

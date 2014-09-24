@@ -73,6 +73,17 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - NewEntryVC DataSource
+
+- (ItemsType)itemType:(NewEntryViewController *)newEntryVC
+{
+    id currentVC = [self.viewControllers objectAtIndex:self.pageControl.currentPage];
+    if ([currentVC isKindOfClass:[BalanceViewController class]])
+        return AssetType;
+    else
+        return [(ItemsViewController *)[self.viewControllers objectAtIndex:self.pageControl.currentPage] itemsType];
+}
+
 #pragma mark - UIPageViewController DataSource
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
@@ -118,6 +129,7 @@
 - (IBAction)newEventBtnTap:(id)sender
 {
     NewEntryViewController *newEntryVC = [[UIStoryboard storyboardWithName:@"NewEntry" bundle:nil] instantiateViewControllerWithIdentifier:@"NewEntryViewController"];
+    [newEntryVC setDatasourceNewEntryVC:self];
     [self presentViewController:newEntryVC animated:YES completion:nil];
 }
 @end

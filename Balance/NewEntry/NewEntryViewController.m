@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *liabilityBtn;
 @property (weak, nonatomic) IBOutlet UILabel *screenTitle;
 
-
 //action methods
 - (IBAction)doneBtnTap:(id)sender;
 - (IBAction)cancelBtnTap:(id)sender;
@@ -31,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self switchToItemType:[self.datasourceNewEntryVC itemType:self]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,22 +51,37 @@
 }
 - (IBAction)liabilityBtnTap:(id)sender
 {
-    [self.assetBtn setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateNormal];
-    [self.liabilityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    [self.assetBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
-    [self.liabilityBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
-    
-    [self.screenTitle setText:@"Liability"];
+    [self switchToItemType:LiabilityType];
 }
 - (IBAction)assetBtnTap:(id)sender
 {
-    [self.liabilityBtn setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateNormal];
-    [self.assetBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    [self.liabilityBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
-    [self.assetBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
-    
-    [self.screenTitle setText:@"Asset"];
+    [self switchToItemType:AssetType];
 }
+
+#pragma mark - Private Methods
+
+- (void)switchToItemType:(ItemsType)itemType
+{
+    if (itemType == AssetType)
+    {
+        [self.liabilityBtn setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateNormal];
+        [self.assetBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        [self.liabilityBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
+        [self.assetBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+        
+        [self.screenTitle setText:@"Asset"];
+    }
+    else
+    {
+        [self.assetBtn setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateNormal];
+        [self.liabilityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        [self.assetBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
+        [self.liabilityBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+        
+        [self.screenTitle setText:@"Liability"];
+    }
+}
+
 @end
