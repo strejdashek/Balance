@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */; };
 		0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEDDC6319D345E700E045D4 /* ItemsViewController.m */; };
 		0FF20F3B19CD8FDF002776F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3A19CD8FDF002776F4 /* main.m */; };
 		0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3D19CD8FDF002776F4 /* AppDelegate.m */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Balance.xcdatamodel; sourceTree = "<group>"; };
 		0FEDDC6219D345E700E045D4 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
 		0FEDDC6319D345E700E045D4 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
 		0FEDDC6619D34CAE00E045D4 /* NewEntryDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewEntryDataSource.h; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		0FF20F3719CD8FDF002776F4 /* Balance */ = {
 			isa = PBXGroup;
 			children = (
+				0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */,
 				0FF20F3C19CD8FDF002776F4 /* AppDelegate.h */,
 				0FF20F3D19CD8FDF002776F4 /* AppDelegate.m */,
 				0FF20F3F19CD8FDF002776F4 /* RootViewController.h */,
@@ -300,6 +303,7 @@
 			files = (
 				0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */,
 				0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */,
+				0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */,
 				0FF20F7219CDAAC2002776F4 /* AssetViewController.m in Sources */,
 				0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */,
 				0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */,
@@ -510,6 +514,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */,
+			);
+			currentVersion = 0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */;
+			path = Balance.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0FF20F2D19CD8FDF002776F4 /* Project object */;
 }
