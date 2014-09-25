@@ -13,6 +13,8 @@
 
 @interface CoreDataManager : NSObject
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 + (CoreDataManager *)sharedManager;
 
 - (void)saveDataInManagedContextUsingBlock:(void (^)(BOOL saved, NSError *error))savedBlock;
@@ -22,8 +24,7 @@
                                         sectionNameKeyPath:(NSString *)sectionNameKeypath
                                                  predicate:(NSPredicate *)predicate;
 
-- (id)createEntityWithClassName:(NSString *)className
-           attributesDictionary:(NSDictionary *)attributesDictionary;
+- (id)createEntityWithClassName:(NSString *)className;
 
 - (void)deleteEntity:(NSManagedObject *)entity;
 

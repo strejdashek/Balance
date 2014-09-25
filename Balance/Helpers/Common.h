@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "CoreDataManager.h"
+#import "ItemsViewController.h"
+#import "Item.h"
 
 @interface Common : NSObject
 

@@ -8,7 +8,6 @@
 
 #import "Item.h"
 
-
 @implementation Item
 
 @dynamic amount;
@@ -17,5 +16,17 @@
 @dynamic notes;
 @dynamic person;
 @dynamic type;
+
+- (Item *)setAmount:(NSInteger)amount deadline:(NSDate *)date name:(NSString *)name notes:(NSString *)notes person:(NSString *)person type:(ItemsType)type
+{
+    [self setAmount:[NSNumber numberWithInt:amount]];
+    [self setType:[NSNumber numberWithInt:type]];
+    [self setDeadline:date];
+    [self setName:name];
+    [self setNotes:notes];
+    [self setPerson:person];
+    
+    return self;
+}
 
 @end

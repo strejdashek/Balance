@@ -10,7 +10,7 @@
 
 @interface CoreDataManager ()
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
@@ -70,24 +70,20 @@ static CoreDataManager *coreDataManager;
     {
         self.managedObjectContext = [[NSManagedObjectContext alloc] init];
         [self.managedObjectContext setPersistentStoreCoordinator:self.persistentStoreCoordinator];
+        NSLog(@"Db file set up: %@",[persistentURL absoluteString]);
     }
     else
     {
-        NSLog(@"ERROR: %@", error.description);
+        NSLog(@"Error: %@", error.description);
     }
 }
 
 #pragma mark - CoreData Basic Methods
 
 - (id)createEntityWithClassName:(NSString *)className
-           attributesDictionary:(NSDictionary *)attributesDictionary
 {
     NSManagedObject *entity = [NSEntityDescription insertNewObjectForEntityForName:className
                                                             inManagedObjectContext:self.managedObjectContext];
-    [attributesDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop){
-        
-        [entity setValue:obj forKey:key];
-    }];
     
     return entity;
 }
@@ -121,7 +117,7 @@ static CoreDataManager *coreDataManager;
     BOOL success = [fetchedResultsController performFetch:&error];
     
     if (!success) {
-        NSLog(@"fetchManagedObjectsWithClassName ERROR: %@", error.description);
+        NSLog(@"fetchManagedObjectsWithClassName error: %@", error.description);
     }
     
     return fetchedResultsController;
