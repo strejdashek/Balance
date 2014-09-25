@@ -13,7 +13,7 @@
 typedef enum ItemsType : NSInteger ItemsType;
 enum ItemsType : NSInteger
 {
-    AssetType,
+    AssetType, 
     LiabilityType
 };
 

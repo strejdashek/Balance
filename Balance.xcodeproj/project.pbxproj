@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */; };
+		0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B819D43C1A00B9A7D7 /* Common.m */; };
+		0FABE0BD19D43D6700B9A7D7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0BC19D43D6700B9A7D7 /* CoreDataManager.m */; };
+		0FABE0C219D45CA900B9A7D7 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0C119D45CA900B9A7D7 /* Item.m */; };
 		0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEDDC6319D345E700E045D4 /* ItemsViewController.m */; };
 		0FF20F3B19CD8FDF002776F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3A19CD8FDF002776F4 /* main.m */; };
 		0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3D19CD8FDF002776F4 /* AppDelegate.m */; };
@@ -16,9 +19,7 @@
 		0FF20F4C19CD8FDF002776F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF20F4B19CD8FDF002776F4 /* Images.xcassets */; };
 		0FF20F4F19CD8FDF002776F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF20F4D19CD8FDF002776F4 /* LaunchScreen.xib */; };
 		0FF20F5B19CD8FDF002776F4 /* BalanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F5A19CD8FDF002776F4 /* BalanceTests.m */; };
-		0FF20F6719CDA93C002776F4 /* LiabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F6619CDA93C002776F4 /* LiabilityViewController.m */; };
 		0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F6E19CDAA95002776F4 /* BalanceViewController.m */; };
-		0FF20F7219CDAAC2002776F4 /* AssetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F7119CDAAC2002776F4 /* AssetViewController.m */; };
 		0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F7519CDDA86002776F4 /* NewEntryViewController.m */; };
 		0FF20F7A19CDDC5F002776F4 /* NewEntry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF20F7919CDDC5F002776F4 /* NewEntry.storyboard */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,13 @@
 
 /* Begin PBXFileReference section */
 		0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Balance.xcdatamodel; sourceTree = "<group>"; };
+		0FABE0B719D43C1A00B9A7D7 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		0FABE0B819D43C1A00B9A7D7 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		0FABE0BB19D43D6700B9A7D7 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		0FABE0BC19D43D6700B9A7D7 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		0FABE0BE19D43D8200B9A7D7 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		0FABE0C019D45CA900B9A7D7 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		0FABE0C119D45CA900B9A7D7 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		0FEDDC6219D345E700E045D4 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
 		0FEDDC6319D345E700E045D4 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
 		0FEDDC6619D34CAE00E045D4 /* NewEntryDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewEntryDataSource.h; sourceTree = "<group>"; };
@@ -51,12 +59,8 @@
 		0FF20F5419CD8FDF002776F4 /* BalanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF20F5919CD8FDF002776F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF20F5A19CD8FDF002776F4 /* BalanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BalanceTests.m; sourceTree = "<group>"; };
-		0FF20F6519CDA93C002776F4 /* LiabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiabilityViewController.h; sourceTree = "<group>"; };
-		0FF20F6619CDA93C002776F4 /* LiabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiabilityViewController.m; sourceTree = "<group>"; };
 		0FF20F6D19CDAA95002776F4 /* BalanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceViewController.h; sourceTree = "<group>"; };
 		0FF20F6E19CDAA95002776F4 /* BalanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceViewController.m; sourceTree = "<group>"; };
-		0FF20F7019CDAAC2002776F4 /* AssetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetViewController.h; sourceTree = "<group>"; };
-		0FF20F7119CDAAC2002776F4 /* AssetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetViewController.m; sourceTree = "<group>"; };
 		0FF20F7419CDDA86002776F4 /* NewEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEntryViewController.h; sourceTree = "<group>"; };
 		0FF20F7519CDDA86002776F4 /* NewEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEntryViewController.m; sourceTree = "<group>"; };
 		0FF20F7919CDDC5F002776F4 /* NewEntry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewEntry.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FABE0B619D43BFD00B9A7D7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0FABE0BE19D43D8200B9A7D7 /* Constants.h */,
+				0FABE0B719D43C1A00B9A7D7 /* Common.h */,
+				0FABE0B819D43C1A00B9A7D7 /* Common.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0FABE0BA19D43D5A00B9A7D7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0FABE0BB19D43D6700B9A7D7 /* CoreDataManager.h */,
+				0FABE0BC19D43D6700B9A7D7 /* CoreDataManager.m */,
+				0FABE0BF19D45C9700B9A7D7 /* Models */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0FABE0BF19D45C9700B9A7D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0FABE0C019D45CA900B9A7D7 /* Item.h */,
+				0FABE0C119D45CA900B9A7D7 /* Item.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0FEDDC6119D345C900E045D4 /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +160,6 @@
 				0FF20F6C19CDAA8A002776F4 /* Balance */,
 				0FEDDC6119D345C900E045D4 /* Items */,
 				0FF20F7319CDDA76002776F4 /* NewEntry */,
-				0FF20F6819CDA94B002776F4 /* Assets */,
-				0FF20F6419CDA912002776F4 /* Liabilities */,
 				0FF20F4B19CD8FDF002776F4 /* Images.xcassets */,
 				0FF20F4D19CD8FDF002776F4 /* LaunchScreen.xib */,
 				0FF20F3819CD8FDF002776F4 /* Supporting Files */,
@@ -139,6 +170,8 @@
 		0FF20F3819CD8FDF002776F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0FABE0BA19D43D5A00B9A7D7 /* CoreData */,
+				0FABE0B619D43BFD00B9A7D7 /* Helpers */,
 				0FF20F3919CD8FDF002776F4 /* Info.plist */,
 				0FF20F3A19CD8FDF002776F4 /* main.m */,
 			);
@@ -160,24 +193,6 @@
 				0FF20F5919CD8FDF002776F4 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0FF20F6419CDA912002776F4 /* Liabilities */ = {
-			isa = PBXGroup;
-			children = (
-				0FF20F6519CDA93C002776F4 /* LiabilityViewController.h */,
-				0FF20F6619CDA93C002776F4 /* LiabilityViewController.m */,
-			);
-			path = Liabilities;
-			sourceTree = "<group>";
-		};
-		0FF20F6819CDA94B002776F4 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				0FF20F7019CDAAC2002776F4 /* AssetViewController.h */,
-				0FF20F7119CDAAC2002776F4 /* AssetViewController.m */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		0FF20F6C19CDAA8A002776F4 /* Balance */ = {
@@ -301,14 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FABE0C219D45CA900B9A7D7 /* Item.m in Sources */,
 				0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */,
 				0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */,
+				0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */,
 				0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */,
-				0FF20F7219CDAAC2002776F4 /* AssetViewController.m in Sources */,
+				0FABE0BD19D43D6700B9A7D7 /* CoreDataManager.m in Sources */,
 				0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */,
 				0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */,
 				0FF20F3B19CD8FDF002776F4 /* main.m in Sources */,
-				0FF20F6719CDA93C002776F4 /* LiabilityViewController.m in Sources */,
 				0FF20F4119CD8FDF002776F4 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
