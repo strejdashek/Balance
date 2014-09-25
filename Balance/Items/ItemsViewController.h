@@ -13,8 +13,8 @@
 typedef enum ItemsType : NSInteger ItemsType;
 enum ItemsType : NSInteger
 {
-    LiabilityType,
-    AssetType
+    AssetType,
+    LiabilityType
 };
 
 //public property
