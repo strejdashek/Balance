@@ -10,6 +10,11 @@
 
 @interface BalanceViewController ()
 
+//outlets
+@property (weak, nonatomic) IBOutlet UILabel *totalAssetsLbl;
+@property (weak, nonatomic) IBOutlet UILabel *totalLiabilitiesLbl;
+@property (weak, nonatomic) IBOutlet UILabel *balanceLbl;
+
 @property (weak, nonatomic) IBOutlet UIView *totalBalanceView;
 
 @end
@@ -22,21 +27,23 @@
     
     self.totalBalanceView.layer.borderColor = [UIColor blackColor].CGColor;
     self.totalBalanceView.layer.borderWidth = 1.0f;
+    
+    NSExpressionDescription *amountSum = [[CoreDataManager sharedManager] expressionDescription:@"sum" forKeyPath:@"amount" forFunction:@"sum:"];
+    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type == %d",1];
+    
+    NSArray *result = [[CoreDataManager sharedManager] executeFetchWithClassName:@"Item"
+                                                                       predicate:nil
+                                                                 sortDescriptors:nil
+                                                               propertiesToFetch:@[amountSum]];
+    
+    id amount = [[result firstObject] valueForKey:@"sum"];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

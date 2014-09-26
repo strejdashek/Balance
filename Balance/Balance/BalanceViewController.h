@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataManager.h"
+#import "ItemsViewController.h"
 
 @interface BalanceViewController : UIViewController
-
-@property (assign, nonatomic) NSInteger const pageIndex;
 
 @end

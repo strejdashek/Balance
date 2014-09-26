@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Common seedTestData];
+    //[[CoreDataManager sharedManager] seed];
     
     return YES;
 }

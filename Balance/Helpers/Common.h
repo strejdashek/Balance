@@ -15,6 +15,4 @@
 
 + (NSURL *)documentsDir;
 
-+ (void)seedTestData;
-
 @end
