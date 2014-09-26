@@ -28,15 +28,15 @@
     self.totalBalanceView.layer.borderColor = [UIColor blackColor].CGColor;
     self.totalBalanceView.layer.borderWidth = 1.0f;
     
-    NSExpressionDescription *amountSum = [[CoreDataManager sharedManager] expressionDescription:@"sum" forKeyPath:@"amount" forFunction:@"sum:"];
-    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type == %d",1];
-    
-    NSArray *result = [[CoreDataManager sharedManager] executeFetchWithClassName:@"Item"
-                                                                       predicate:nil
-                                                                 sortDescriptors:nil
-                                                               propertiesToFetch:@[amountSum]];
-    
-    id amount = [[result firstObject] valueForKey:@"sum"];
+//    NSExpressionDescription *amountSum = [[CoreDataManager sharedManager] expressionDescription:@"sum" forKeyPath:@"amount" forFunction:@"sum:"];
+//    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type == %d",1];
+//    
+//    NSArray *result = [[CoreDataManager sharedManager] executeFetchWithClassName:@"Item"
+//                                                                       predicate:nil
+//                                                                 sortDescriptors:nil
+//                                                               propertiesToFetch:@[amountSum]];
+//    
+//    id amount = [[result firstObject] valueForKey:@"sum"];
 }
 
 - (void)didReceiveMemoryWarning
