@@ -26,7 +26,7 @@
     [super viewDidLoad];
     
     self.totalBalanceView.layer.borderColor = [UIColor blackColor].CGColor;
-    self.totalBalanceView.layer.borderWidth = 1.0f;
+    self.totalBalanceView.layer.borderWidth = 1.5f;
     
     NSExpressionDescription *amountSum = [[CoreDataManager sharedManager] expressionDescription:@"sum" forKeyPath:@"amount" forFunction:@"sum:"];
 //    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type == %d",1];
