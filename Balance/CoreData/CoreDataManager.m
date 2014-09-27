@@ -78,7 +78,7 @@ static CoreDataManager *coreDataManager;
     }
 }
 
-#pragma mark - CoreData Basic Methods
+#pragma mark - Basic Methods
 
 - (id)createEntityWithClassName:(NSString *)className
 {
@@ -99,44 +99,65 @@ static CoreDataManager *coreDataManager;
     [self.managedObjectContext deleteObject:entity];
 }
 
-- (NSArray *)executeFetchWithClassName:(NSString *)className
-                             predicate:(NSPredicate *)predicate
-                       sortDescriptors:(NSArray *)sortDescriptors
-                     propertiesToFetch:(NSArray *)properties
-{
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:className inManagedObjectContext:self.managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    
-    if (predicate)
-        [request setPredicate:predicate];
-    if (sortDescriptors)
-        [request setSortDescriptors:sortDescriptors];
-    if (properties)
-        [request setPropertiesToFetch:properties];
-    
-    NSError *error;
-    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
-    if (results == nil)
-    {
-        NSLog(@"Fetching %@ error: %@",className,error.description);
-    }
-    
-    return results;
-}
+#pragma mark - Fetching
 
-- (NSExpressionDescription *)expressionDescription:(NSString *)name forKeyPath:(NSString *)keyPath forFunction:(NSString *)function
+- (NSExpressionDescription *)expressionDescriptionForKeyPath:(NSString *)keyPath
 {
-    NSExpression *keyPathExpression = [NSExpression expressionForKeyPath:keyPath];
-    NSExpression *functionExpression = [NSExpression expressionForFunction:function arguments:[NSArray arrayWithObject:keyPathExpression]];
-    
     NSExpressionDescription *expressionDescription = [[NSExpressionDescription alloc] init];
-    [expressionDescription setName:name];
-    [expressionDescription setExpression:functionExpression];
-    //[expressionDescription setExpressionResultType:NSDecimalAttributeType];
+    expressionDescription.name = @"expressionName";
+    expressionDescription.expression = [NSExpression expressionForKeyPath:keyPath];
+    expressionDescription.expressionResultType = NSDecimalAttributeType;
 
     return expressionDescription;
 }
+
+- (NSNumber *)executeFetchRequest:(NSString *)entity withPredicate:(NSPredicate *)predicate withKeyPath:(NSString *)keyPath
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    fetchRequest.resultType = NSDictionaryResultType;
+    
+    NSExpressionDescription *expression = [self expressionDescriptionForKeyPath:keyPath];
+    fetchRequest.propertiesToFetch = @[expression];
+    
+    if (predicate)
+        fetchRequest.predicate = predicate;
+    
+    NSError *error = nil;
+    NSArray *resultArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (resultArray == nil)
+    {
+        NSLog(@"executeFetchRequest: %@", error);
+    }
+    
+    return [[resultArray objectAtIndex:0] objectForKey:expression.name];
+}
+
+
+//- (NSArray *)executeFetchWithClassName:(NSString *)className
+//                             predicate:(NSPredicate *)predicate
+//                       sortDescriptors:(NSArray *)sortDescriptors
+//                     propertiesToFetch:(NSArray *)properties
+//{
+//    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:className inManagedObjectContext:self.managedObjectContext];
+//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//    [request setEntity:entityDescription];
+//    
+//    if (predicate)
+//        [request setPredicate:predicate];
+//    if (sortDescriptors)
+//        [request setSortDescriptors:sortDescriptors];
+//    if (properties)
+//        [request setPropertiesToFetch:properties];
+//    
+//    NSError *error;
+//    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+//    if (results == nil)
+//    {
+//        NSLog(@"Fetching %@ error: %@",className,error.description);
+//    }
+//    
+//    return results;
+//}
 
 //- (NSFetchedResultsController *)fetchEntitiesWithClassName:(NSString *)className
 //                                           sortDescriptors:(NSArray *)sortDescriptors
@@ -183,18 +204,26 @@ static CoreDataManager *coreDataManager;
 
 - (void)testFetch
 {
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Item"
-                                              inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    fetchRequest.resultType = NSDictionaryResultType;
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type == %d",1];
-    [fetchRequest setPredicate:predicate];
+    NSExpressionDescription *expressionDescription = [[NSExpressionDescription alloc] init];
+    expressionDescription.name = @"sumOfAmounts";
+    expressionDescription.expression = [NSExpression expressionForKeyPath:@"@sum.amount"];
+    expressionDescription.expressionResultType = NSDecimalAttributeType;
     
-    NSError *error;
-    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    id amount = [[fetchedObjects firstObject] valueForKey:@"amount"];
+    fetchRequest.propertiesToFetch = @[expressionDescription];
     
+    NSError *error = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (result == nil)
+    {
+        NSLog(@"Error: %@", error);
+    }
+    else
+    {
+        NSNumber *sumOfAmounts = [[result objectAtIndex:0] objectForKey:@"sumOfAmounts"];
+    }
 }
 
 + (void)seed

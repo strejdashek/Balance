@@ -27,16 +27,24 @@
     
     self.totalBalanceView.layer.borderColor = [UIColor blackColor].CGColor;
     self.totalBalanceView.layer.borderWidth = 1.5f;
+
+    NSPredicate *predicateAssets = [NSPredicate predicateWithFormat:@"type == %d",AssetType];
+    NSNumber *totalAsset = [[CoreDataManager sharedManager] executeFetchRequest:@"Item" withPredicate:predicateAssets withKeyPath:@"@sum.amount"];
+    NSPredicate *predicateLiabilities = [NSPredicate predicateWithFormat:@"type == %d",LiabilityType];
+    NSNumber *totalLiability = [[CoreDataManager sharedManager] executeFetchRequest:@"Item" withPredicate:predicateLiabilities withKeyPath:@"@sum.amount"];
     
-    NSExpressionDescription *amountSum = [[CoreDataManager sharedManager] expressionDescription:@"sum" forKeyPath:@"amount" forFunction:@"sum:"];
-//    //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type == %d",1];
-//    
-//    NSArray *result = [[CoreDataManager sharedManager] executeFetchWithClassName:@"Item"
-//                                                                       predicate:nil
-//                                                                 sortDescriptors:nil
-//                                                               propertiesToFetch:@[amountSum]];
-//    
-//    id amount = [[result firstObject] valueForKey:@"sum"];
+    [self.totalAssetsLbl setText:[totalAsset stringValue]];
+    [self.totalLiabilitiesLbl setText:[totalLiability stringValue]];
+    
+    if ([totalAsset compare:totalLiability] == NSOrderedDescending)
+    {
+        [self.balanceLbl setText:[NSString stringWithFormat:@"%d",[totalAsset integerValue] - [totalLiability integerValue]]];
+    }
+    else
+    {
+        [self.balanceLbl setText:[NSString stringWithFormat:@"%d",[totalLiability integerValue] - [totalAsset integerValue]]];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

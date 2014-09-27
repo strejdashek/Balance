@@ -21,13 +21,8 @@
 - (void)seed;
 - (void)testFetch;
 
-- (NSExpressionDescription *)expressionDescription:(NSString *)name
-                                        forKeyPath:(NSString *)keyPath
-                                       forFunction:(NSString *)function;
-- (NSArray *)executeFetchWithClassName:(NSString *)className
-                             predicate:(NSPredicate *)predicate
-                       sortDescriptors:(NSArray *)sortDescriptors
-                     propertiesToFetch:(NSArray *)properties;
+- (NSExpressionDescription *)expressionDescriptionForKeyPath:(NSString *)keyPath;
+- (NSNumber *)executeFetchRequest:(NSString *)entity withPredicate:(NSPredicate *)predicate withKeyPath:(NSString *)keyPath;
 
 
 //- (NSFetchedResultsController *)fetchEntitiesWithClassName:(NSString *)className
