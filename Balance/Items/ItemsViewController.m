@@ -7,8 +7,11 @@
 //
 
 #import "ItemsViewController.h"
+#import "CoreDataManager.h"
 
 @interface ItemsViewController ()
+
+@property (strong, nonatomic) NSArray *items;
 
 @end
 
@@ -17,6 +20,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSPredicate *predicate;
+    if (self.itemsType == AssetType)
+        predicate = [NSPredicate predicateWithFormat:@"type == %d",AssetType];
+    else
+        predicate = [NSPredicate predicateWithFormat:@"type == %d",LiabilityType];
+    
+    self.items = [[CoreDataManager sharedManager] executeFetchRequestSimple:@"Item" withPredicate:predicate];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,18 +39,23 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 9;
+    return [self.items count];
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell;
+    ItemCollectionViewCell *cell;
     
     if (self.itemsType == AssetType)
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AssetCell" forIndexPath:indexPath];
+        cell = (ItemCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"AssetCell" forIndexPath:indexPath];
     else
-        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"LiabilityCell" forIndexPath:indexPath];
+        cell = (ItemCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"LiabilityCell" forIndexPath:indexPath];
+    
+    NSManagedObject *object = [self.items objectAtIndex:indexPath.row];
+    [cell.nameLbl setText:[object valueForKey:@"name"]];
+    [cell.amountLbl setText:[(NSNumber *)[object valueForKey:@"amount"] stringValue]];
+    [cell.personLbl setText:[object valueForKey:@"person"]];
     
     return cell;
 }

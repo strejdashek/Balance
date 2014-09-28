@@ -113,7 +113,7 @@ static CoreDataManager *coreDataManager;
 
 - (NSNumber *)executeFetchRequest:(NSString *)entity withPredicate:(NSPredicate *)predicate withKeyPath:(NSString *)keyPath
 {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entity];
     fetchRequest.resultType = NSDictionaryResultType;
     
     NSExpressionDescription *expression = [self expressionDescriptionForKeyPath:keyPath];
@@ -132,6 +132,23 @@ static CoreDataManager *coreDataManager;
     return [[resultArray objectAtIndex:0] objectForKey:expression.name];
 }
 
+- (NSArray *)executeFetchRequestSimple:(NSString *)entity withPredicate:(NSPredicate *)predicate
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entity];
+    fetchRequest.resultType = NSDictionaryResultType;
+    
+    if (predicate)
+        fetchRequest.predicate = predicate;
+    
+    NSError *error = nil;
+    NSArray *resultArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (resultArray == nil)
+    {
+        NSLog(@"executeFetchRequest: %@", error);
+    }
+    
+    return resultArray;
+}
 
 //- (NSArray *)executeFetchWithClassName:(NSString *)className
 //                             predicate:(NSPredicate *)predicate

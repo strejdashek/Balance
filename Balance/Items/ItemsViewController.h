@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ItemCollectionViewCell.h"
 
 @interface ItemsViewController : UIViewController
 

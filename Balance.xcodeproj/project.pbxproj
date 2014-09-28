@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FA1EE2519D80FC200D4DC66 /* ItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */; };
 		0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */; };
 		0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B819D43C1A00B9A7D7 /* Common.m */; };
 		0FABE0BD19D43D6700B9A7D7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0BC19D43D6700B9A7D7 /* CoreDataManager.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FA1EE2319D80FC200D4DC66 /* ItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewCell.h; sourceTree = "<group>"; };
+		0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewCell.m; sourceTree = "<group>"; };
 		0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Balance.xcdatamodel; sourceTree = "<group>"; };
 		0FABE0B719D43C1A00B9A7D7 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		0FABE0B819D43C1A00B9A7D7 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 			children = (
 				0FEDDC6219D345E700E045D4 /* ItemsViewController.h */,
 				0FEDDC6319D345E700E045D4 /* ItemsViewController.m */,
+				0FA1EE2319D80FC200D4DC66 /* ItemCollectionViewCell.h */,
+				0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 			files = (
 				0FABE0C219D45CA900B9A7D7 /* Item.m in Sources */,
 				0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */,
+				0FA1EE2519D80FC200D4DC66 /* ItemCollectionViewCell.m in Sources */,
 				0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */,
 				0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */,
 				0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */,
