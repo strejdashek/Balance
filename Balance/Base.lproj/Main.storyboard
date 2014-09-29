@@ -234,8 +234,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="amountLbl" destination="kSI-Lw-yBy" id="GTj-Rh-MMQ"/>
-                                            <outlet property="nameLbl" destination="RBs-EI-F3K" id="OaR-kh-YJv"/>
                                             <outlet property="personLbl" destination="QnJ-zS-efu" id="e1Z-H8-7Fb"/>
                                         </connections>
                                     </collectionViewCell>
@@ -280,6 +278,11 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="amountLbl" destination="tXO-LA-560" id="UMK-Lb-EIS"/>
+                                            <outlet property="nameLbl" destination="hXG-df-CKK" id="KLV-Bc-Wwq"/>
+                                            <outlet property="personLbl" destination="20r-Z2-txc" id="tTd-x4-ggT"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
