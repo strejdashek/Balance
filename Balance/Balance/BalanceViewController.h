@@ -10,6 +10,16 @@
 #import "CoreDataManager.h"
 #import "ItemsViewController.h"
 
+@class BalanceViewController;
+
+@protocol BalanceVCDelegate<NSObject>
+@required
+- (void)balanceViewController:(BalanceViewController *)balanceVC didSelectTotalItemType:(ItemsType)itemType;
+@end
+
 @interface BalanceViewController : UIViewController
+
+//delegates
+@property (assign, nonatomic) id<BalanceVCDelegate> delegateBalanceVC;
 
 @end

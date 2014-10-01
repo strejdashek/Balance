@@ -10,8 +10,9 @@
 #import "BalanceViewController.h"
 #import "ItemsViewController.h"
 #import "NewEntryViewController.h"
+#import "BalanceViewController.h"
 
-@interface RootViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate,NewEntryVCDataSource>
+@interface RootViewController : UIViewController <UIPageViewControllerDataSource,UIPageViewControllerDelegate,NewEntryVCDataSource,BalanceVCDelegate>
 
 @end
 

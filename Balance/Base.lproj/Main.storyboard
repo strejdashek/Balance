@@ -12,10 +12,10 @@
             </objects>
             <point key="canvasLocation" x="32" y="669"/>
         </scene>
-        <!--Balance-->
+        <!--Root View Controller-->
         <scene sceneID="InX-JI-Zsi">
             <objects>
-                <viewController id="5yb-Q8-fRZ" customClass="RootViewController" sceneMemberID="viewController">
+                <viewController id="5yb-Q8-fRZ" userLabel="Root View Controller" customClass="RootViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CAa-ki-sP8"/>
                         <viewControllerLayoutGuide type="bottom" id="eyo-uv-tSD"/>
@@ -102,6 +102,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-To-rf7">
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="132"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="totalAssetsBtnTap:" destination="0an-IH-zz2" eventType="touchUpInside" id="vTk-cd-Gs7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.24980379250000001" green="0.78587105349999997" blue="0.2827725324" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -131,6 +141,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-cv-y0O">
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="132"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="totalLiabilitiesBtnTap:" destination="0an-IH-zz2" eventType="touchUpInside" id="inm-PC-m6a"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.26898758671258316" blue="0.2483376105597338" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -168,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ho-w7-Bng" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918" y="669"/>
+            <point key="canvasLocation" x="910" y="669"/>
         </scene>
         <!--Items View Controller-->
         <scene sceneID="1ea-mh-aCY">
@@ -212,7 +232,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR9-Tf-Ssx">
-                                                    <rect key="frame" x="0.0" y="2" width="37" height="25"/>
+                                                    <rect key="frame" x="0.0" y="2" width="28" height="25"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="X">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -234,6 +254,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="amountLbl" destination="kSI-Lw-yBy" id="9M5-SE-ddC"/>
+                                            <outlet property="nameLbl" destination="RBs-EI-F3K" id="SXc-TO-fdq"/>
                                             <outlet property="personLbl" destination="QnJ-zS-efu" id="e1Z-H8-7Fb"/>
                                         </connections>
                                     </collectionViewCell>
@@ -257,7 +279,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAJ-Mp-WvI">
-                                                    <rect key="frame" x="0.0" y="2" width="37" height="25"/>
+                                                    <rect key="frame" x="0.0" y="2" width="28" height="25"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="X">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -296,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1T-zN-JKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="669"/>
+            <point key="canvasLocation" x="910" y="-453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q1E-aH-TiS">

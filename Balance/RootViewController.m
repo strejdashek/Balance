@@ -38,6 +38,7 @@
     self.pageViewController.delegate = self;
     
     BalanceViewController *balanceVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BalanceViewController"];
+    [balanceVC setDelegateBalanceVC:self];
     ItemsViewController *assetVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemsViewController"];
     [assetVC setItemsType:AssetType];
     ItemsViewController *liabilityVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemsViewController"];
@@ -71,6 +72,30 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - BalanceVC Delegate
+
+- (void)balanceViewController:(BalanceViewController *)balanceVC didSelectTotalItemType:(ItemsType)itemType;
+{
+    NSLog(@"Manual swipe not implemented");
+//    ItemsViewController *switchToVC;
+//    UIPageViewControllerNavigationDirection direction;
+//    
+//    if (itemType == AssetType)
+//    {
+//        switchToVC = [self.viewControllers objectAtIndex:([self.pageControl currentPage] - 1)];
+//        direction = UIPageViewControllerNavigationDirectionReverse;
+//    }
+//    else if (itemType == LiabilityType)
+//    {
+//        switchToVC = [self.viewControllers objectAtIndex:([self.pageControl currentPage] + 1)];
+//        direction = UIPageViewControllerNavigationDirectionForward;
+//    }
+//    
+//    [self.pageViewController setViewControllers:@[switchToVC] direction:direction animated:YES completion:nil];
+//    
+//    self.pageControl.currentPage = [self.viewControllers indexOfObject:self.pageViewController.viewControllers[0]];
 }
 
 #pragma mark - NewEntryVC DataSource

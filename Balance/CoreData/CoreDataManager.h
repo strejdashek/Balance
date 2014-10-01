@@ -18,7 +18,7 @@
 - (id)createEntityWithClassName:(NSString *)className;
 - (void)saveDataInManagedContextUsingBlock:(void (^)(BOOL saved, NSError *error))savedBlock;
 - (void)deleteEntity:(NSManagedObject *)entity;
-- (void)seed;
++ (void)seed;
 - (void)testFetch;
 
 - (NSExpressionDescription *)expressionDescriptionForKeyPath:(NSString *)keyPath;

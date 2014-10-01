@@ -221,26 +221,7 @@ static CoreDataManager *coreDataManager;
 
 - (void)testFetch
 {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
-    fetchRequest.resultType = NSDictionaryResultType;
     
-    NSExpressionDescription *expressionDescription = [[NSExpressionDescription alloc] init];
-    expressionDescription.name = @"sumOfAmounts";
-    expressionDescription.expression = [NSExpression expressionForKeyPath:@"@sum.amount"];
-    expressionDescription.expressionResultType = NSDecimalAttributeType;
-    
-    fetchRequest.propertiesToFetch = @[expressionDescription];
-    
-    NSError *error = nil;
-    NSArray *result = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    if (result == nil)
-    {
-        NSLog(@"Error: %@", error);
-    }
-    else
-    {
-        NSNumber *sumOfAmounts = [[result objectAtIndex:0] objectForKey:@"sumOfAmounts"];
-    }
 }
 
 + (void)seed

@@ -18,7 +18,7 @@ enum ItemsType : NSInteger
     LiabilityType
 };
 
-//public property
+//public properties
 @property (assign, nonatomic) ItemsType itemsType;
 
 @end

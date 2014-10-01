@@ -17,6 +17,10 @@
 
 @property (weak, nonatomic) IBOutlet UIView *totalBalanceView;
 
+//action methods
+- (IBAction)totalAssetsBtnTap:(id)sender;
+- (IBAction)totalLiabilitiesBtnTap:(id)sender;
+
 @end
 
 @implementation BalanceViewController
@@ -44,7 +48,6 @@
     {
         [self.balanceLbl setText:[NSString stringWithFormat:@"%d",[totalLiability integerValue] - [totalAsset integerValue]]];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +55,16 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Action Methods
 
+- (IBAction)totalAssetsBtnTap:(id)sender
+{
+    [self.delegateBalanceVC balanceViewController:self didSelectTotalItemType:AssetType];
+}
+
+- (IBAction)totalLiabilitiesBtnTap:(id)sender
+{
+    [self.delegateBalanceVC balanceViewController:self didSelectTotalItemType:LiabilityType];
+}
 
 @end
