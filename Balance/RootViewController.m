@@ -41,8 +41,10 @@
     [balanceVC setDelegateBalanceVC:self];
     ItemsViewController *assetVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemsViewController"];
     [assetVC setItemsType:AssetType];
+    [assetVC setDelegateItemsVC:balanceVC];
     ItemsViewController *liabilityVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemsViewController"];
     [liabilityVC setItemsType:LiabilityType];
+    [liabilityVC setDelegateItemsVC:balanceVC];
     
     self.viewControllers = [[NSArray alloc] initWithObjects:assetVC,balanceVC,liabilityVC,nil];
     [self.pageViewController setViewControllers:@[balanceVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
@@ -78,7 +80,7 @@
 
 - (void)balanceViewController:(BalanceViewController *)balanceVC didSelectTotalItemType:(ItemsType)itemType;
 {
-    NSLog(@"Manual swipe not implemented");
+    NSLog(@"Manual swipe not implemented since its choppy");
 //    ItemsViewController *switchToVC;
 //    UIPageViewControllerNavigationDirection direction;
 //    

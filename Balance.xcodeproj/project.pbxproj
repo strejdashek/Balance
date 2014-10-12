@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F17D11119EAFCDB009B4947 /* EnumTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumTypes.h; sourceTree = "<group>"; };
 		0FA1EE2319D80FC200D4DC66 /* ItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewCell.h; sourceTree = "<group>"; };
 		0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewCell.m; sourceTree = "<group>"; };
 		0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Balance.xcdatamodel; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 				0FABE0BE19D43D8200B9A7D7 /* Constants.h */,
 				0FABE0B719D43C1A00B9A7D7 /* Common.h */,
 				0FABE0B819D43C1A00B9A7D7 /* Common.m */,
+				0F17D11119EAFCDB009B4947 /* EnumTypes.h */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

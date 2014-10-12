@@ -135,7 +135,7 @@ static CoreDataManager *coreDataManager;
 - (NSArray *)executeFetchRequestSimple:(NSString *)entity withPredicate:(NSPredicate *)predicate
 {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entity];
-    fetchRequest.resultType = NSDictionaryResultType;
+    //fetchRequest.resultType = NSDictionaryResultType;
     
     if (predicate)
         fetchRequest.predicate = predicate;
