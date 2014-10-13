@@ -9,6 +9,7 @@
 #import "NewEntryViewController.h"
 #import "CoreDataManager.h"
 #import "Item.h"
+#import "UIColor+CustomColors.h"
 
 @interface NewEntryViewController ()
 
@@ -83,6 +84,8 @@
     {
         [self.liabilityBtn setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateNormal];
         [self.assetBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.amountSwitch setOnTintColor:[UIColor customGreen]];
+        [self.amountTF setTextColor:[UIColor customGreen]];
         
         [self.liabilityBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
         [self.assetBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
@@ -91,6 +94,8 @@
     {
         [self.assetBtn setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateNormal];
         [self.liabilityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.amountSwitch setOnTintColor:[UIColor customRed]];
+        [self.amountTF setTextColor:[UIColor customRed]];
         
         [self.assetBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
         [self.liabilityBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];

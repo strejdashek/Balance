@@ -12,6 +12,7 @@
 		0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B819D43C1A00B9A7D7 /* Common.m */; };
 		0FABE0BD19D43D6700B9A7D7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0BC19D43D6700B9A7D7 /* CoreDataManager.m */; };
 		0FABE0C219D45CA900B9A7D7 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0C119D45CA900B9A7D7 /* Item.m */; };
+		0FB1A7E819EC4A0D0031B49F /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB1A7E719EC4A0C0031B49F /* UIColor+CustomColors.m */; };
 		0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEDDC6319D345E700E045D4 /* ItemsViewController.m */; };
 		0FF20F3B19CD8FDF002776F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3A19CD8FDF002776F4 /* main.m */; };
 		0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3D19CD8FDF002776F4 /* AppDelegate.m */; };
@@ -47,6 +48,8 @@
 		0FABE0BE19D43D8200B9A7D7 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0FABE0C019D45CA900B9A7D7 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		0FABE0C119D45CA900B9A7D7 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		0FB1A7E619EC4A0C0031B49F /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		0FB1A7E719EC4A0C0031B49F /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		0FEDDC6219D345E700E045D4 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
 		0FEDDC6319D345E700E045D4 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
 		0FEDDC6619D34CAE00E045D4 /* NewEntryDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewEntryDataSource.h; sourceTree = "<group>"; };
@@ -118,6 +121,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0FB1A7E519EC49690031B49F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				0FB1A7E619EC4A0C0031B49F /* UIColor+CustomColors.h */,
+				0FB1A7E719EC4A0C0031B49F /* UIColor+CustomColors.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		0FEDDC6119D345C900E045D4 /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +191,7 @@
 			children = (
 				0FABE0BA19D43D5A00B9A7D7 /* CoreData */,
 				0FABE0B619D43BFD00B9A7D7 /* Helpers */,
+				0FB1A7E519EC49690031B49F /* Categories */,
 				0FF20F3919CD8FDF002776F4 /* Info.plist */,
 				0FF20F3A19CD8FDF002776F4 /* main.m */,
 			);
@@ -329,6 +342,7 @@
 				0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */,
 				0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */,
 				0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */,
+				0FB1A7E819EC4A0D0031B49F /* UIColor+CustomColors.m in Sources */,
 				0FABE0BD19D43D6700B9A7D7 /* CoreDataManager.m in Sources */,
 				0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */,
 				0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */,
