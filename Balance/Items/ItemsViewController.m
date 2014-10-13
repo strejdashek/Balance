@@ -8,6 +8,7 @@
 
 #import "ItemsViewController.h"
 #import "CoreDataManager.h"
+#import "ItemCollectionViewCell.h"
 
 @interface ItemsViewController ()
 
@@ -72,9 +73,28 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NewEntryViewController *newEntryVC = [[UIStoryboard storyboardWithName:@"NewEntry" bundle:nil] instantiateViewControllerWithIdentifier:@"NewEntryViewController"];
-//    [newEntryVC setDatasourceNewEntryVC:self];
-//    [self presentViewController:newEntryVC animated:YES completion:nil];
+    NewEntryViewController *newEntryVC = [[UIStoryboard storyboardWithName:@"NewEntry" bundle:nil] instantiateViewControllerWithIdentifier:@"NewEntryViewController"];
+    [newEntryVC setDatasourceNewEntryVC:self];
+    self.selectedItemIndexPath = indexPath;
+    [self presentViewController:newEntryVC animated:YES completion:nil];
+}
+
+#pragma mark - NewEntryVC DataSource
+
+- (ItemsType)itemType:(NewEntryViewController *)newEntryVC
+{
+    return self.itemsType;
+}
+
+- (NewEntryMode)newEntryMode:(NewEntryViewController *)newEntryVC
+{
+    return NewEntryEditMode;
+}
+
+- (NSManagedObject *)itemSelected:(NewEntryViewController *)newEntryVC
+{
+    NSManagedObject *selectedItem = [self.items objectAtIndex:self.selectedItemIndexPath.row];
+    return selectedItem;
 }
 
 #pragma mark - UIAlertView Delegate

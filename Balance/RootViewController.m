@@ -111,6 +111,11 @@
         return [(ItemsViewController *)[self.viewControllers objectAtIndex:self.pageControl.currentPage] itemsType];
 }
 
+- (NewEntryMode)newEntryMode:(NewEntryViewController *)newEntryVC
+{
+    return NewEntryNewMode;
+}
+
 #pragma mark - UIPageViewController DataSource
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController

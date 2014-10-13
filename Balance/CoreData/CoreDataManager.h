@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "CoreData/CoreData.h"
-#import "Constants.h"
-#import "Common.h"
 
 @interface CoreDataManager : NSObject
 

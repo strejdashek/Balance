@@ -7,6 +7,9 @@
 //
 
 #import "CoreDataManager.h"
+#import "Constants.h"
+#import "Common.h"
+#import "Item.h"
 
 @interface CoreDataManager ()
 

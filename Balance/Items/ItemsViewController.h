@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ItemCollectionViewCell.h"
+#import "NewEntryViewController.h"
+#import "EnumTypes.h"
 
 @class ItemsViewController;
 @protocol ItemsVCDelegate<NSObject>
@@ -15,14 +16,7 @@
 - (void)itemsViewController:(ItemsViewController *)itemsVC didRemoveItemWithAmount:(NSNumber *)amount;
 @end
 
-@interface ItemsViewController : UIViewController
-
-typedef enum ItemsType : NSInteger ItemsType;
-enum ItemsType : NSInteger
-{
-    AssetType, 
-    LiabilityType
-};
+@interface ItemsViewController : UIViewController <NewEntryVCDataSource>
 
 //public properties
 @property (assign, nonatomic) ItemsType itemsType;

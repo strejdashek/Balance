@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "ItemsViewController.h"
+#import "EnumTypes.h"
 
 @interface Item : NSManagedObject
 
@@ -20,5 +20,7 @@
 @property (nonatomic, retain) NSNumber *type;
 
 - (Item *)setAmount:(NSInteger)amount deadline:(NSDate *)date name:(NSString *)name notes:(NSString *)notes person:(NSString *)person type:(ItemsType)type;
+
+- (Item *)mapToItem:(NSManagedObject *)managedObject;
 
 @end

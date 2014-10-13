@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ItemsViewController.h"
+#import "EnumTypes.h"
 
 @class NewEntryViewController;
-
+@class NSManagedObject;
+@class Item;
 @protocol NewEntryVCDataSource<NSObject>
 @required
 - (ItemsType)itemType:(NewEntryViewController *)newEntryVC;
+- (NewEntryMode)newEntryMode:(NewEntryViewController *)newEntryVC;
+@optional
+- (NSManagedObject *)itemSelected:(NewEntryViewController *)newEntryVC;
+- (NSManagedObject *)newEntryVC:(NewEntryViewController *)newEntryVC didCreatedItem:(Item *)newItem;
+- (NSManagedObject *)newEntryVC:(NewEntryViewController *)newEntryVC didUpdatedItem:(Item *)updatedItem;
 @end
 
 @interface NewEntryViewController : UIViewController
