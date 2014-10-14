@@ -30,6 +30,7 @@
 - (IBAction)cancelBtnTap:(id)sender;
 - (IBAction)liabilityBtnTap:(id)sender;
 - (IBAction)assetBtnTap:(id)sender;
+- (IBAction)amountSwitchTap:(id)sender;
 
 @end
 
@@ -76,6 +77,20 @@
     [self switchToItemType:AssetType];
 }
 
+- (IBAction)amountSwitchTap:(id)sender
+{
+    if ([(UISwitch *)sender isOn])
+    {
+        [self.amountLbl setHidden:NO];
+        [self.amountTF setHidden:NO];
+    }
+    else
+    {
+        [self.amountLbl setHidden:YES];
+        [self.amountTF setHidden:YES];
+    }
+}
+
 #pragma mark - Private Methods
 
 - (void)switchToItemType:(ItemsType)itemType
@@ -115,6 +130,7 @@
     {
         [self.amountSwitch setOn:YES];
         [self.amountLbl setHidden:NO];
+        [self.amountTF setHidden:NO];
         [self.amountTF setText:[(NSNumber *)[item valueForKey:@"amount"] stringValue]];
     }
     [self.personTF setText:(NSString *)[item valueForKey:@"person"]];

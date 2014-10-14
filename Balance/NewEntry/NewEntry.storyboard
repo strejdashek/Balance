@@ -22,7 +22,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csk-9f-17N">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csk-9f-17N">
                                 <rect key="frame" x="169" y="118" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,9 +62,12 @@
                                     <action selector="doneBtnTap:" destination="0wQ-vc-l4J" eventType="touchUpInside" id="1te-eC-kqI"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgi-5j-G8W">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wgi-5j-G8W">
                                 <rect key="frame" x="95" y="113" width="51" height="31"/>
                                 <color key="onTintColor" red="0.24980379250000001" green="0.78587105349999997" blue="0.2827725324" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="amountSwitchTap:" destination="0wQ-vc-l4J" eventType="valueChanged" id="zXG-2u-fFS"/>
+                                </connections>
                             </switch>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hK-sg-yB3">
                                 <rect key="frame" x="128" y="18" width="100" height="30"/>
@@ -155,7 +158,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="How much" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cA2-3B-AUX">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="How much" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cA2-3B-AUX">
                                 <rect key="frame" x="239" y="113" width="191" height="30"/>
                                 <color key="textColor" red="0.19905514669999999" green="0.62621818620000003" blue="0.22532615440000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
