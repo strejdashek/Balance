@@ -30,18 +30,41 @@
 {
     [super viewDidLoad];
     
-    NSPredicate *predicate;
-    if (self.itemsType == AssetType)
-        predicate = [NSPredicate predicateWithFormat:@"type == %d",AssetType];
-    else
-        predicate = [NSPredicate predicateWithFormat:@"type == %d",LiabilityType];
+    [self reloadItemsAlongWithCollectionView:NO];
     
-    self.items = [NSMutableArray arrayWithArray:[[CoreDataManager sharedManager] executeFetchRequestSimple:@"Item" withPredicate:predicate]];
+    [self setupNotifications];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Notifications Handling
+
+- (void)setupNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"DidCreatedNewItem"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"DidUpdatedItem"
+                                               object:nil];
+}
+
+- (void)receiveNotification:(NSNotification *)notification
+{
+    if ([[notification name] isEqualToString:@"DidCreatedNewItem"])
+    {
+        [self reloadItemsAlongWithCollectionView:YES];
+    }
+    else if ([[notification name] isEqualToString:@"DidUpdatedItem"])
+    {
+        [self reloadItemsAlongWithCollectionView:YES];
+    }
 }
 
 #pragma mark - UICollectionView DataSource
@@ -97,6 +120,13 @@
     return selectedItem;
 }
 
+#pragma mark - NewEntryVC Delegate
+
+- (void)newEntryVC:(NewEntryViewController *)newEntryVC didUpdatedItem:(Item *)updatedItem
+{
+    //reload this vc + balance vc
+}
+
 #pragma mark - UIAlertView Delegate
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -139,6 +169,22 @@
                                           otherButtonTitles:@"Ok",nil];
     [alert setTag:1];
     [alert show];
+}
+
+#pragma mark - Private Methods
+
+- (void)reloadItemsAlongWithCollectionView:(BOOL)includeCollectionView
+{
+    NSPredicate *predicate;
+    if (self.itemsType == AssetType)
+        predicate = [NSPredicate predicateWithFormat:@"type == %d",AssetType];
+    else
+        predicate = [NSPredicate predicateWithFormat:@"type == %d",LiabilityType];
+    
+    self.items = [NSMutableArray arrayWithArray:[[CoreDataManager sharedManager] executeFetchRequestSimple:@"Item" withPredicate:predicate]];
+    
+    if (includeCollectionView)
+        [self.collectionViewItems reloadData];
 }
 
 @end

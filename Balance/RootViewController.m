@@ -152,6 +152,16 @@
 {
     if (completed)
     {
+        if ([pageViewController.viewControllers[0] isKindOfClass:[ItemsViewController class]])
+        {
+            if ([(ItemsViewController *)pageViewController.viewControllers[0] itemsType] == AssetType)
+                self.navigationItem.title = @"Assets";
+            else
+                self.navigationItem.title = @"Liabilities";
+        }
+        else
+            self.navigationItem.title = @"Balance";
+        
         self.pageControl.currentPage = [self.viewControllers indexOfObject:pageViewController.viewControllers[0]];
     }
 }

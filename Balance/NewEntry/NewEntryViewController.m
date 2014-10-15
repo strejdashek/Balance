@@ -24,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *deadlineTF;
 @property (weak, nonatomic) IBOutlet UITextView *notesTF;
 
-
 //action methods
 - (IBAction)doneBtnTap:(id)sender;
 - (IBAction)cancelBtnTap:(id)sender;
@@ -42,10 +41,10 @@
 {
     [super viewDidLoad];
     
-    [self switchToItemType:[self.datasourceNewEntryVC itemType:self]];
-    
     if ([self.datasourceNewEntryVC newEntryMode:self] == NewEntryEditMode)
     {
+        [self switchToItemType:[self.datasourceNewEntryVC itemType:self]];
+        
         NSManagedObject *object = [self.datasourceNewEntryVC itemSelected:self];
         [self setupEditedItem:object];
     }
@@ -59,6 +58,29 @@
 #pragma mark - Action Methods
 - (IBAction)doneBtnTap:(id)sender
 {
+    if ([self.datasourceNewEntryVC newEntryMode:self] == NewEntryNewMode)
+    {
+        Item *newItem = [[CoreDataManager sharedManager] createEntityWithClassName:@"Item"];
+        NSInteger amount = [self.amountSwitch isOn] ? [self.amountTF.text integerValue] : 0;
+        [newItem setAmount:amount deadline:[NSDate date] name:self.eventNameTF.text notes:self.notesTF.text person:self.personTF.text type:[self.datasourceNewEntryVC itemType:self]];
+        
+        [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
+            if (error)
+                NSLog(@"Save error: %@", [error localizedDescription]);
+            else
+            {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"DidCreatedNewItem" object:self];
+            }
+        }];
+        
+        
+    }
+    else
+    {
+        //edit mode
+    }
+    
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -103,7 +125,7 @@
         [self.amountTF setTextColor:[UIColor customGreen]];
         
         [self.liabilityBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
-        [self.assetBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+        [self.assetBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:15.0]];
     }
     else
     {
@@ -113,7 +135,7 @@
         [self.amountTF setTextColor:[UIColor customRed]];
         
         [self.assetBtn.titleLabel setFont:[UIFont systemFontOfSize:13.0]];
-        [self.liabilityBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+        [self.liabilityBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:15.0]];
     }
 }
 

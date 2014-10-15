@@ -7,6 +7,7 @@
 //
 
 #import "BalanceViewController.h"
+#import "UIColor+CustomColors.h"
 
 @interface BalanceViewController ()
 
@@ -33,11 +34,40 @@
     self.totalBalanceView.layer.borderWidth = 1.5f;
 
     [self reloadTotals];
+    
+    [self setupNotifications];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Notifications Handling
+
+- (void)setupNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"DidCreatedNewItem"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"DidUpdatedItem"
+                                               object:nil];
+}
+
+- (void)receiveNotification:(NSNotification *)notification
+{
+    if ([[notification name] isEqualToString:@"DidCreatedNewItem"])
+    {
+        [self reloadTotals];
+    }
+    else if ([[notification name] isEqualToString:@"DidUpdatedItem"])
+    {
+        [self reloadTotals];
+    }
 }
 
 #pragma mark - ItemsVC Delegate
@@ -93,10 +123,12 @@
     if (totalAsset > totalLiability)
     {
         [self.balanceLbl setText:[NSString stringWithFormat:@"%d",totalAsset - totalLiability]];
+        [self.balanceLbl setTextColor:[UIColor customGreen]];
     }
-    else if ([self.totalAssetsLbl.text integerValue] > [self.totalLiabilitiesLbl.text integerValue])
+    else if (totalAsset < totalLiability)
     {
         [self.balanceLbl setText:[NSString stringWithFormat:@"%d",totalLiability - totalAsset]];
+        [self.balanceLbl setTextColor:[UIColor customRed]];
     }
     else
     {

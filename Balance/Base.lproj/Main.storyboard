@@ -159,30 +159,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4gt-7w-Z2d">
-                                <rect key="frame" x="284" y="349" width="200" height="132"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOl-RQ-Wan">
-                                        <rect key="frame" x="8" y="32" width="184" height="68"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <color key="textColor" red="0.19905514669999999" green="0.62621818620000003" blue="0.22532615440000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOl-RQ-Wan">
+                                <rect key="frame" x="292" y="396" width="184" height="37"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.24980379250000001" green="0.78587105349999997" blue="0.2827725324" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="balanceLbl" destination="GOl-RQ-Wan" id="8Oe-nd-Lmv"/>
                         <outlet property="totalAssetsLbl" destination="TPd-Sv-gkJ" id="g6Q-NX-uKH"/>
-                        <outlet property="totalBalanceView" destination="4gt-7w-Z2d" id="KG6-ni-oHD"/>
                         <outlet property="totalLiabilitiesLbl" destination="3Z3-oO-phY" id="Zbo-Ec-9Wx"/>
                     </connections>
                 </viewController>
