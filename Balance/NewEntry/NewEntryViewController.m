@@ -56,6 +56,7 @@
 }
 
 #pragma mark - Action Methods
+
 - (IBAction)doneBtnTap:(id)sender
 {
     if ([self.datasourceNewEntryVC newEntryMode:self] == NewEntryNewMode)
@@ -66,7 +67,7 @@
         
         [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
             if (error)
-                NSLog(@"Save error: %@", [error localizedDescription]);
+                NSLog(@"Save new entity error: %@", [error localizedDescription]);
             else
             {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"DidCreatedNewItem" object:self];
@@ -77,7 +78,19 @@
     }
     else
     {
-        //edit mode
+        NSManagedObject *object = [self.datasourceNewEntryVC itemSelected:self];
+        Item *testItem = (Item *)object;
+        NSInteger amount = [self.amountSwitch isOn] ? [self.amountTF.text integerValue] : 0;
+        [testItem setAmount:amount deadline:[NSDate date] name:self.eventNameTF.text notes:self.notesTF.text person:self.personTF.text type:[self.datasourceNewEntryVC itemType:self]];
+        
+        [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
+            if (error)
+                NSLog(@"Save edited entity error: %@", [error localizedDescription]);
+            else
+            {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"DidUpdatedItem" object:self];
+            }
+        }];
     }
     
     
