@@ -19,7 +19,7 @@
 
 - (Item *)setAmount:(NSInteger)amount deadline:(NSDate *)date name:(NSString *)name notes:(NSString *)notes person:(NSString *)person type:(ItemsType)type
 {
-    [self setAmount:[NSNumber numberWithInt:amount]];
+    [self setAmount:[NSNumber numberWithInteger:amount]];
     [self setType:[NSNumber numberWithInt:type]];
     [self setDeadline:date];
     [self setName:name];

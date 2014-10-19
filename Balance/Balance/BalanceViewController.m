@@ -77,12 +77,12 @@
     if (itemsVC.itemsType == AssetType)
     {
         NSInteger newAmount = [self.totalAssetsLbl.text integerValue] - [amount integerValue];
-        self.totalAssetsLbl.text = [NSString stringWithFormat:@"%d",newAmount];
+        self.totalAssetsLbl.text = [NSString stringWithFormat:@"%zd",newAmount];
     }
     else
     {
         NSInteger newAmount = [self.totalLiabilitiesLbl.text integerValue] - [amount integerValue];
-        self.totalLiabilitiesLbl.text = [NSString stringWithFormat:@"%d",newAmount];
+        self.totalLiabilitiesLbl.text = [NSString stringWithFormat:@"%zd",newAmount];
     }
     
     [self reloadBalance];
@@ -122,12 +122,12 @@
     
     if (totalAsset > totalLiability)
     {
-        [self.balanceLbl setText:[NSString stringWithFormat:@"%d",totalAsset - totalLiability]];
+        [self.balanceLbl setText:[NSString stringWithFormat:@"%zd",totalAsset - totalLiability]];
         [self.balanceLbl setTextColor:[UIColor customGreen]];
     }
     else if (totalAsset < totalLiability)
     {
-        [self.balanceLbl setText:[NSString stringWithFormat:@"%d",totalLiability - totalAsset]];
+        [self.balanceLbl setText:[NSString stringWithFormat:@"%zd",totalLiability - totalAsset]];
         [self.balanceLbl setTextColor:[UIColor customRed]];
     }
     else
