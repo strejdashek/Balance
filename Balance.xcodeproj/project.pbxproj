@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F34DE0C19F3C3BC00FFE8BB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DE0B19F3C3BC00FFE8BB /* Person.m */; };
+		0F34DE0F19F3C46E00FFE8BB /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DE0E19F3C46E00FFE8BB /* Item.m */; };
 		0FA1EE2519D80FC200D4DC66 /* ItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */; };
 		0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */; };
 		0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B819D43C1A00B9A7D7 /* Common.m */; };
 		0FABE0BD19D43D6700B9A7D7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0BC19D43D6700B9A7D7 /* CoreDataManager.m */; };
-		0FABE0C219D45CA900B9A7D7 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0C119D45CA900B9A7D7 /* Item.m */; };
 		0FB1A7E819EC4A0D0031B49F /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB1A7E719EC4A0C0031B49F /* UIColor+CustomColors.m */; };
 		0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FEDDC6319D345E700E045D4 /* ItemsViewController.m */; };
 		0FF20F3B19CD8FDF002776F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF20F3A19CD8FDF002776F4 /* main.m */; };
@@ -38,6 +39,10 @@
 
 /* Begin PBXFileReference section */
 		0F17D11119EAFCDB009B4947 /* EnumTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumTypes.h; sourceTree = "<group>"; };
+		0F34DE0A19F3C3BC00FFE8BB /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		0F34DE0B19F3C3BC00FFE8BB /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		0F34DE0D19F3C46E00FFE8BB /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		0F34DE0E19F3C46E00FFE8BB /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		0FA1EE2319D80FC200D4DC66 /* ItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewCell.h; sourceTree = "<group>"; };
 		0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewCell.m; sourceTree = "<group>"; };
 		0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Balance.xcdatamodel; sourceTree = "<group>"; };
@@ -46,8 +51,6 @@
 		0FABE0BB19D43D6700B9A7D7 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		0FABE0BC19D43D6700B9A7D7 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		0FABE0BE19D43D8200B9A7D7 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		0FABE0C019D45CA900B9A7D7 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		0FABE0C119D45CA900B9A7D7 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		0FB1A7E619EC4A0C0031B49F /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		0FB1A7E719EC4A0C0031B49F /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		0FEDDC6219D345E700E045D4 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
@@ -115,8 +118,10 @@
 		0FABE0BF19D45C9700B9A7D7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0FABE0C019D45CA900B9A7D7 /* Item.h */,
-				0FABE0C119D45CA900B9A7D7 /* Item.m */,
+				0F34DE0D19F3C46E00FFE8BB /* Item.h */,
+				0F34DE0E19F3C46E00FFE8BB /* Item.m */,
+				0F34DE0A19F3C3BC00FFE8BB /* Person.h */,
+				0F34DE0B19F3C3BC00FFE8BB /* Person.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,7 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FABE0C219D45CA900B9A7D7 /* Item.m in Sources */,
+				0F34DE0F19F3C46E00FFE8BB /* Item.m in Sources */,
 				0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */,
 				0FA1EE2519D80FC200D4DC66 /* ItemCollectionViewCell.m in Sources */,
 				0FEDDC6419D345E700E045D4 /* ItemsViewController.m in Sources */,
@@ -345,6 +350,7 @@
 				0FB1A7E819EC4A0D0031B49F /* UIColor+CustomColors.m in Sources */,
 				0FABE0BD19D43D6700B9A7D7 /* CoreDataManager.m in Sources */,
 				0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */,
+				0F34DE0C19F3C3BC00FFE8BB /* Person.m in Sources */,
 				0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */,
 				0FF20F3B19CD8FDF002776F4 /* main.m in Sources */,
 				0FF20F4119CD8FDF002776F4 /* RootViewController.m in Sources */,

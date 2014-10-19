@@ -10,6 +10,7 @@
 #import "CoreDataManager.h"
 #import "Item.h"
 #import "UIColor+CustomColors.h"
+#import "Person.h"
 
 @interface NewEntryViewController ()
 
@@ -61,9 +62,16 @@
 {
     if ([self.datasourceNewEntryVC newEntryMode:self] == NewEntryNewMode)
     {
-        Item *newItem = [[CoreDataManager sharedManager] createEntityWithClassName:@"Item"];
+        Item *newItem = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
         NSInteger amount = [self.amountSwitch isOn] ? [self.amountTF.text integerValue] : 0;
-        [newItem setAmount:amount deadline:[NSDate date] name:self.eventNameTF.text notes:self.notesTF.text person:self.personTF.text type:[self.datasourceNewEntryVC itemType:self]];
+        Person *fakePerson = [[CoreDataManager sharedManager] createEntityForName:@"Person"];
+        [fakePerson setName:@"FakePerson"];
+        [newItem setType:AssetType]; //segment selected
+        [newItem setAmount:[NSNumber numberWithInteger:amount]];
+        [newItem setName:self.eventNameTF.text];
+        [newItem setPerson:fakePerson];
+        [newItem setDeadline:[NSDate date]];
+        [newItem setNotes:self.notesTF.text];
         
         [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
             if (error)
@@ -78,10 +86,15 @@
     }
     else
     {
-        NSManagedObject *object = [self.datasourceNewEntryVC itemSelected:self];
-        Item *testItem = (Item *)object;
+        Item *editedItem = (Item *)[self.datasourceNewEntryVC itemSelected:self];
         NSInteger amount = [self.amountSwitch isOn] ? [self.amountTF.text integerValue] : 0;
-        [testItem setAmount:amount deadline:[NSDate date] name:self.eventNameTF.text notes:self.notesTF.text person:self.personTF.text type:[self.datasourceNewEntryVC itemType:self]];
+        
+        [editedItem setType:[NSNumber numberWithInteger:[self.datasourceNewEntryVC itemType:self]]];
+        [editedItem setAmount:[NSNumber numberWithInteger:amount]];
+        [editedItem setName:self.eventNameTF.text];
+        //person missing
+        [editedItem setDeadline:[NSDate date]];
+        [editedItem setNotes:self.notesTF.text];
         
         [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
             if (error)

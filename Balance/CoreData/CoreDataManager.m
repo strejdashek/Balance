@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "Common.h"
 #import "Item.h"
+#import "Person.h"
 
 @interface CoreDataManager ()
 
@@ -83,7 +84,7 @@ static CoreDataManager *coreDataManager;
 
 #pragma mark - Basic Methods
 
-- (id)createEntityWithClassName:(NSString *)className
+- (id)createEntityForName:(NSString *)className
 {
     NSManagedObject *entity = [NSEntityDescription insertNewObjectForEntityForName:className
                                                             inManagedObjectContext:self.managedObjectContext];
@@ -228,23 +229,60 @@ static CoreDataManager *coreDataManager;
 
 + (void)seed
 {
-    //liabilities
-    Item *firstL = [[CoreDataManager sharedManager] createEntityWithClassName:@"Item"];
-    [firstL setAmount:56 deadline:[NSDate date] name:@"Food" notes:@"Weekly shopping" person:@"Susan" type:LiabilityType];
-    Item *secondL = [[CoreDataManager sharedManager] createEntityWithClassName:@"Item"];
-    [secondL setAmount:42 deadline:[NSDate date] name:@"Headphones" notes:@"" person:@"David" type:LiabilityType];
-    Item *thirdL = [[CoreDataManager sharedManager] createEntityWithClassName:@"Item"];
-    [thirdL setAmount:112 deadline:[NSDate date] name:@"Ticket" notes:@"Football Hammers" person:@"Richard" type:LiabilityType];
-    Item *fourthL = [[CoreDataManager sharedManager] createEntityWithClassName:@"Item"];
-    [fourthL setAmount:10 deadline:[NSDate date] name:@"Present" notes:@"Present for a former teacher." person:@"Jane" type:LiabilityType];
+    //*********************************** PERSONS ***********************************
     
-    //assets
-    Item *firstA = [[CoreDataManager sharedManager] createEntityWithClassName:@"Item"];
-    [firstA setAmount:100 deadline:[NSDate date] name:@"Car Service" notes:@"Car annual service" person:@"Susan" type:AssetType];
-    Item *secondA = [[CoreDataManager sharedManager] createEntityWithClassName:@"Item"];
-    [secondA setAmount:1150 deadline:[NSDate date] name:@"Parfume" notes:@"Versace" person:@"Mom" type:AssetType];
-    Item *thirdA = [[CoreDataManager sharedManager] createEntityWithClassName:@"Item"];
-    [thirdA setAmount:200 deadline:[NSDate date] name:@"Bet" notes:@"" person:@"George" type:AssetType];
+    Person *susan = [[CoreDataManager sharedManager] createEntityForName:@"Person"];
+    [susan setName:@"Susan"];
+    
+    Person *richard = [[CoreDataManager sharedManager] createEntityForName:@"Person"];
+    [richard setName:@"Richard"];
+    
+    Person *george = [[CoreDataManager sharedManager] createEntityForName:@"Person"];
+    [george setName:@"George"];
+    
+    //*********************************** LIABILITIES ***********************************
+    
+    Item *firstL = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
+    [firstL setAmount:[NSNumber numberWithInteger:56]];
+    [firstL setType:[NSNumber numberWithInt:LiabilityType]];
+    [firstL setDeadline:[NSDate date]];
+    [firstL setName:@"Food"];
+    [firstL setNotes:@"Weekly shopping."];
+    [firstL setPerson:susan];
+    
+    Item *secondL = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
+    [secondL setAmount:[NSNumber numberWithInteger:42]];
+    [secondL setType:[NSNumber numberWithInt:LiabilityType]];
+    [secondL setDeadline:[NSDate date]];
+    [secondL setName:@"Headphones"];
+    [secondL setPerson:richard];
+    
+    Item *thirdL = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
+    [thirdL setAmount:[NSNumber numberWithInteger:100]];
+    [thirdL setType:[NSNumber numberWithInt:LiabilityType]];
+    [thirdL setDeadline:[NSDate date]];
+    [thirdL setName:@"Tickets"];
+    [thirdL setNotes:@"BPL Gunners - QPR and Bubbels - Gunners."];
+    [thirdL setPerson:richard];
+    
+    //*********************************** ASSETS ***********************************
+    
+    Item *firstA = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
+    [firstA setAmount:[NSNumber numberWithInteger:120]];
+    [firstA setType:[NSNumber numberWithInt:AssetType]];
+    [firstA setDeadline:[NSDate date]];
+    [firstA setName:@"Car Service"];
+    [firstA setNotes:@"Oil + tires."];
+    [firstA setPerson:susan];
+    
+    Item *secondA = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
+    [secondA setAmount:[NSNumber numberWithInteger:200]];
+    [secondA setType:[NSNumber numberWithInt:AssetType]];
+    [secondA setDeadline:[NSDate date]];
+    [secondA setName:@"Bet"];
+    [secondA setPerson:george];
+
+    //*********************************** SAVE ROUTINE ***********************************
     
     [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
         if (error)

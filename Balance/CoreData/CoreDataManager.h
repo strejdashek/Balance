@@ -13,7 +13,7 @@
 
 + (CoreDataManager *)sharedManager;
 
-- (id)createEntityWithClassName:(NSString *)className;
+- (id)createEntityForName:(NSString *)className;
 - (void)saveDataInManagedContextUsingBlock:(void (^)(BOOL saved, NSError *error))savedBlock;
 - (void)deleteEntity:(NSManagedObject *)entity;
 + (void)seed;

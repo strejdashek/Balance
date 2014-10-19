@@ -9,6 +9,8 @@
 #import "ItemsViewController.h"
 #import "CoreDataManager.h"
 #import "ItemCollectionViewCell.h"
+#import "Item.h"
+#import "Person.h"
 
 @interface ItemsViewController ()
 
@@ -84,10 +86,10 @@
     else
         cell = (ItemCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"LiabilityCell" forIndexPath:indexPath];
     
-    NSManagedObject *object = [self.items objectAtIndex:indexPath.row];
-    [cell.nameLbl setText:[object valueForKey:@"name"]];
-    [cell.amountLbl setText:[(NSNumber *)[object valueForKey:@"amount"] stringValue]];
-    [cell.personLbl setText:[object valueForKey:@"person"]];
+    Item *item = (Item *)[self.items objectAtIndex:indexPath.row];
+    [cell.nameLbl setText:[item name]];
+    [cell.amountLbl setText:[[item amount] stringValue]];
+    [cell.personLbl setText:[[item person] name]];
     
     return cell;
 }
