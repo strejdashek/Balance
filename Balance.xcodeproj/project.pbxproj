@@ -55,7 +55,6 @@
 		0FB1A7E719EC4A0C0031B49F /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		0FEDDC6219D345E700E045D4 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
 		0FEDDC6319D345E700E045D4 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
-		0FEDDC6619D34CAE00E045D4 /* NewEntryDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewEntryDataSource.h; sourceTree = "<group>"; };
 		0FF20F3519CD8FDF002776F4 /* Balance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF20F3919CD8FDF002776F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF20F3A19CD8FDF002776F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,14 +145,6 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
-		0FEDDC6519D34C1500E045D4 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				0FEDDC6619D34CAE00E045D4 /* NewEntryDataSource.h */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
 		0FF20F2C19CD8FDF002776F4 = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +226,6 @@
 				0FF20F7919CDDC5F002776F4 /* NewEntry.storyboard */,
 				0FF20F7419CDDA86002776F4 /* NewEntryViewController.h */,
 				0FF20F7519CDDA86002776F4 /* NewEntryViewController.m */,
-				0FEDDC6519D34C1500E045D4 /* Delegates */,
 			);
 			path = NewEntry;
 			sourceTree = "<group>";

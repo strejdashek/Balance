@@ -25,6 +25,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *deadlineTF;
 @property (weak, nonatomic) IBOutlet UITextView *notesTF;
 
+//private properties
+@property (assign, nonatomic) ItemsType selectedType;
+
 //action methods
 - (IBAction)doneBtnTap:(id)sender;
 - (IBAction)cancelBtnTap:(id)sender;
@@ -42,11 +45,17 @@
 {
     [super viewDidLoad];
     
+    [self switchToItemType:[self.datasourceNewEntryVC itemType:self]];
+    
     if ([self.datasourceNewEntryVC newEntryMode:self] == NewEntryEditMode)
     {
-        [self switchToItemType:[self.datasourceNewEntryVC itemType:self]];
-        
-        NSManagedObject *object = [self.datasourceNewEntryVC itemSelected:self];
+        [self.liabilityBtn setUserInteractionEnabled:NO];
+        [self.assetBtn setUserInteractionEnabled:NO];
+    }
+    
+    if ([self.datasourceNewEntryVC newEntryMode:self] == NewEntryEditMode)
+    {
+        Item *object = (Item *)[self.datasourceNewEntryVC itemSelected:self];
         [self setupEditedItem:object];
     }
 }
@@ -64,12 +73,9 @@
     {
         Item *newItem = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
         NSInteger amount = [self.amountSwitch isOn] ? [self.amountTF.text integerValue] : 0;
-        Person *fakePerson = [[CoreDataManager sharedManager] createEntityForName:@"Person"];
-        [fakePerson setName:@"FakePerson"];
-        [newItem setType:AssetType]; //segment selected
+        [newItem setType:[NSNumber numberWithInteger:self.selectedType]];
         [newItem setAmount:[NSNumber numberWithInteger:amount]];
         [newItem setName:self.eventNameTF.text];
-        [newItem setPerson:fakePerson];
         [newItem setDeadline:[NSDate date]];
         [newItem setNotes:self.notesTF.text];
         
@@ -89,10 +95,9 @@
         Item *editedItem = (Item *)[self.datasourceNewEntryVC itemSelected:self];
         NSInteger amount = [self.amountSwitch isOn] ? [self.amountTF.text integerValue] : 0;
         
-        [editedItem setType:[NSNumber numberWithInteger:[self.datasourceNewEntryVC itemType:self]]];
+        [editedItem setType:[NSNumber numberWithInteger:self.selectedType]];
         [editedItem setAmount:[NSNumber numberWithInteger:amount]];
         [editedItem setName:self.eventNameTF.text];
-        //person missing
         [editedItem setDeadline:[NSDate date]];
         [editedItem setNotes:self.notesTF.text];
         
@@ -143,6 +148,8 @@
 
 - (void)switchToItemType:(ItemsType)itemType
 {
+    self.selectedType = itemType;
+    
     if (itemType == AssetType)
     {
         [self.liabilityBtn setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateNormal];
@@ -165,10 +172,10 @@
     }
 }
 
-- (void)setupEditedItem:(NSManagedObject *)item
+- (void)setupEditedItem:(Item *)item
 {    
-    [self.eventNameTF setText:(NSString *)[item valueForKey:@"name"]];
-    if ([(NSNumber *)[item valueForKey:@"amount"] integerValue] == 0)
+    [self.eventNameTF setText:[item name]];
+    if ([[item amount] integerValue] == 0)
     {
         [self.amountSwitch setOn:NO];
         [self.amountLbl setHidden:YES];
@@ -179,11 +186,10 @@
         [self.amountSwitch setOn:YES];
         [self.amountLbl setHidden:NO];
         [self.amountTF setHidden:NO];
-        [self.amountTF setText:[(NSNumber *)[item valueForKey:@"amount"] stringValue]];
+        [self.amountTF setText:[[item amount] stringValue]];
     }
-    [self.personTF setText:(NSString *)[item valueForKey:@"person"]];
-    //[self.deadlineTF setText:[editedItem deadline] ];
-    [self.notesTF setText:(NSString *)[item valueForKey:@"notes"]];
+    [self.personTF setText:[[item person] name]];
+    [self.notesTF setText:[item notes]];
 }
 
 @end
