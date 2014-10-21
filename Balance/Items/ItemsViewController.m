@@ -98,10 +98,11 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NewEntryViewController *newEntryVC = [[UIStoryboard storyboardWithName:@"NewEntry" bundle:nil] instantiateViewControllerWithIdentifier:@"NewEntryViewController"];
+    UINavigationController *navigationController = [[UIStoryboard storyboardWithName:@"NewEntry" bundle:nil] instantiateViewControllerWithIdentifier:@"NewEntryNavigationController"];
+    NewEntryViewController *newEntryVC  = navigationController.viewControllers[0];
     [newEntryVC setDatasourceNewEntryVC:self];
     self.selectedItemIndexPath = indexPath;
-    [self presentViewController:newEntryVC animated:YES completion:nil];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 #pragma mark - NewEntryVC DataSource

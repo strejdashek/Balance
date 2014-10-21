@@ -21,9 +21,9 @@
 @property (weak, nonatomic) IBOutlet UISwitch *amountSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *amountTF;
 @property (weak, nonatomic) IBOutlet UILabel *amountLbl;
-@property (weak, nonatomic) IBOutlet UITextField *personTF;
-@property (weak, nonatomic) IBOutlet UITextField *deadlineTF;
+@property (weak, nonatomic) IBOutlet UIButton *personBtn;
 @property (weak, nonatomic) IBOutlet UITextView *notesTF;
+@property (weak, nonatomic) IBOutlet UIButton *dateBtn;
 
 //private properties
 @property (assign, nonatomic) ItemsType selectedType;
@@ -34,6 +34,8 @@
 - (IBAction)liabilityBtnTap:(id)sender;
 - (IBAction)assetBtnTap:(id)sender;
 - (IBAction)amountSwitchTap:(id)sender;
+- (IBAction)dateBtnTap:(id)sender;
+- (IBAction)personBtnTap:(id)sender;
 
 @end
 
@@ -63,6 +65,16 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - DatePickerVC Delegate
+
+- (void)datePickerViewController:(DatePickerViewController *)datePickerVC didChangeDate:(NSDate *)date
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yyyy"];
+    
+    [self.dateBtn setTitle:[formatter stringFromDate:date] forState:UIControlStateNormal];
 }
 
 #pragma mark - Action Methods
@@ -144,6 +156,24 @@
     }
 }
 
+- (IBAction)dateBtnTap:(id)sender
+{
+    DatePickerViewController *datePickerVC = [[UIStoryboard storyboardWithName:@"DatePicker" bundle:nil] instantiateViewControllerWithIdentifier:@"DatePickerVC"];
+    [datePickerVC setModalPresentationStyle:UIModalPresentationPopover];
+    [datePickerVC setDelegateDatePickerVC:self];
+    
+    UIPopoverPresentationController *popoverPresentationController = datePickerVC.popoverPresentationController;
+    popoverPresentationController.sourceRect = ((UIButton *)sender).bounds;
+    popoverPresentationController.sourceView = sender;
+    popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionLeft;
+    popoverPresentationController.backgroundColor = [UIColor whiteColor];
+    
+    [self presentViewController:datePickerVC animated:YES completion:nil];
+}
+
+- (IBAction)personBtnTap:(id)sender {
+}
+
 #pragma mark - Private Methods
 
 - (void)switchToItemType:(ItemsType)itemType
@@ -188,7 +218,8 @@
         [self.amountTF setHidden:NO];
         [self.amountTF setText:[[item amount] stringValue]];
     }
-    [self.personTF setText:[[item person] name]];
+    [self.personBtn setTitle:[[item person] name] forState:UIControlStateNormal];
+    [self.personBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [self.notesTF setText:[item notes]];
 }
 

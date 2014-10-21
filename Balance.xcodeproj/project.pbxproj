@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F34DE0C19F3C3BC00FFE8BB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DE0B19F3C3BC00FFE8BB /* Person.m */; };
 		0F34DE0F19F3C46E00FFE8BB /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DE0E19F3C46E00FFE8BB /* Item.m */; };
+		0F35C39519F439AE008D2804 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F35C39419F439AE008D2804 /* DatePickerViewController.m */; };
+		0F35C39719F439C3008D2804 /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F35C39619F439C3008D2804 /* DatePicker.storyboard */; };
 		0FA1EE2519D80FC200D4DC66 /* ItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */; };
 		0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */; };
 		0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B819D43C1A00B9A7D7 /* Common.m */; };
@@ -43,6 +45,9 @@
 		0F34DE0B19F3C3BC00FFE8BB /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		0F34DE0D19F3C46E00FFE8BB /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		0F34DE0E19F3C46E00FFE8BB /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		0F35C39319F439AE008D2804 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerViewController.h; path = Balance/ReusableControllers/DatePickerViewController.h; sourceTree = SOURCE_ROOT; };
+		0F35C39419F439AE008D2804 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerViewController.m; path = Balance/ReusableControllers/DatePickerViewController.m; sourceTree = SOURCE_ROOT; };
+		0F35C39619F439C3008D2804 /* DatePicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DatePicker.storyboard; path = Balance/ReusableControllers/DatePicker.storyboard; sourceTree = SOURCE_ROOT; };
 		0FA1EE2319D80FC200D4DC66 /* ItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewCell.h; sourceTree = "<group>"; };
 		0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewCell.m; sourceTree = "<group>"; };
 		0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Balance.xcdatamodel; sourceTree = "<group>"; };
@@ -93,6 +98,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F35C39219F43992008D2804 /* ReusableControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F35C39819F439DB008D2804 /* DatePicker */,
+			);
+			path = ReusableControllers;
+			sourceTree = "<group>";
+		};
+		0F35C39819F439DB008D2804 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				0F35C39619F439C3008D2804 /* DatePicker.storyboard */,
+				0F35C39319F439AE008D2804 /* DatePickerViewController.h */,
+				0F35C39419F439AE008D2804 /* DatePickerViewController.m */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
 		0FABE0B619D43BFD00B9A7D7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +198,7 @@
 				0FF20F6C19CDAA8A002776F4 /* Balance */,
 				0FEDDC6119D345C900E045D4 /* Items */,
 				0FF20F7319CDDA76002776F4 /* NewEntry */,
+				0F35C39219F43992008D2804 /* ReusableControllers */,
 				0FF20F4B19CD8FDF002776F4 /* Images.xcassets */,
 				0FF20F4D19CD8FDF002776F4 /* LaunchScreen.xib */,
 				0FF20F3819CD8FDF002776F4 /* Supporting Files */,
@@ -314,6 +338,7 @@
 				0FF20F4F19CD8FDF002776F4 /* LaunchScreen.xib in Resources */,
 				0FF20F7A19CDDC5F002776F4 /* NewEntry.storyboard in Resources */,
 				0FF20F4C19CD8FDF002776F4 /* Images.xcassets in Resources */,
+				0F35C39719F439C3008D2804 /* DatePicker.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +364,7 @@
 				0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */,
 				0FB1A7E819EC4A0D0031B49F /* UIColor+CustomColors.m in Sources */,
 				0FABE0BD19D43D6700B9A7D7 /* CoreDataManager.m in Sources */,
+				0F35C39519F439AE008D2804 /* DatePickerViewController.m in Sources */,
 				0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */,
 				0F34DE0C19F3C3BC00FFE8BB /* Person.m in Sources */,
 				0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */,
