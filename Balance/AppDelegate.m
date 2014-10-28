@@ -18,7 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [CoreDataManager seed];
+    //seed test data, uncomment if needed
+    //[CoreDataManager seed];
     
     return YES;
 }
