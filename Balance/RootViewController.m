@@ -81,6 +81,9 @@
 - (void)balanceViewController:(BalanceViewController *)balanceVC didSelectTotalItemType:(ItemsType)itemType;
 {
     NSLog(@"Manual swipe not implemented since its choppy, I will fix later");
+    
+    //fixing some bugs
+    
 //    ItemsViewController *switchToVC;
 //    UIPageViewControllerNavigationDirection direction;
 //    
