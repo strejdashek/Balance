@@ -82,9 +82,6 @@
 {
     NSLog(@"Manual swipe not implemented since its choppy, I will fix later");
     
-    //fixing some bugs
-    //fixing other bugs
-    
 //    ItemsViewController *switchToVC;
 //    UIPageViewControllerNavigationDirection direction;
 //    
