@@ -190,11 +190,11 @@
 			isa = PBXGroup;
 			children = (
 				0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */,
+				0FF20F4819CD8FDF002776F4 /* Main.storyboard */,
 				0FF20F3C19CD8FDF002776F4 /* AppDelegate.h */,
 				0FF20F3D19CD8FDF002776F4 /* AppDelegate.m */,
 				0FF20F3F19CD8FDF002776F4 /* RootViewController.h */,
 				0FF20F4019CD8FDF002776F4 /* RootViewController.m */,
-				0FF20F4819CD8FDF002776F4 /* Main.storyboard */,
 				0FF20F6C19CDAA8A002776F4 /* Balance */,
 				0FEDDC6119D345C900E045D4 /* Items */,
 				0FF20F7319CDDA76002776F4 /* NewEntry */,
