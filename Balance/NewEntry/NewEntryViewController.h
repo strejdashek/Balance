@@ -20,7 +20,7 @@
 - (ItemsType)itemType:(NewEntryViewController *)newEntryVC;
 - (NewEntryMode)newEntryMode:(NewEntryViewController *)newEntryVC;
 @optional
-- (NSManagedObject *)itemSelected:(NewEntryViewController *)newEntryVC;
+- (Item *)itemSelected:(NewEntryViewController *)newEntryVC;
 @end
 
 @interface NewEntryViewController : UIViewController <DatePickerVCDelegate, PersonSelectionVCDelegate>

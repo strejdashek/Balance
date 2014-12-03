@@ -117,35 +117,11 @@
     return NewEntryEditMode;
 }
 
-- (NSManagedObject *)itemSelected:(NewEntryViewController *)newEntryVC
+- (Item *)itemSelected:(NewEntryViewController *)newEntryVC
 {
-    NSManagedObject *selectedItem = [self.items objectAtIndex:self.selectedItemIndexPath.row];
+    Item *selectedItem = [self.items objectAtIndex:self.selectedItemIndexPath.row];
+    
     return selectedItem;
-}
-
-#pragma mark - UIAlertView Delegate
-
-- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (actionSheet.tag == 1)
-    {
-        if (buttonIndex == 1)
-        {
-            NSManagedObject *selectedItem = [self.items objectAtIndex:self.selectedItemIndexPath.row];
-            NSNumber *selectedAmount = (NSNumber *)[selectedItem valueForKey:@"amount"];
-            
-            [[CoreDataManager sharedManager] deleteEntity:selectedItem];
-            [self.items removeObjectAtIndex:self.selectedItemIndexPath.row];
-            [self.collectionViewItems deleteItemsAtIndexPaths:@[self.selectedItemIndexPath]];
-            
-            [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
-                if (error)
-                    NSLog(@"Delete error: %@", [error localizedDescription]);
-            }];
-            
-            [self.delegateItemsVC itemsViewController:self didRemoveItemWithAmount:selectedAmount];
-        }
-    }
 }
 
 #pragma mark - Action Methods
@@ -154,17 +130,39 @@
 {
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.collectionViewItems];
     self.selectedItemIndexPath = [self.collectionViewItems indexPathForItemAtPoint:buttonPosition];
-    
     NSManagedObject *selectedItem = [self.items objectAtIndex:self.selectedItemIndexPath.row];
-    NSString *msg = [NSString stringWithFormat:@"Do you really want to remove %@ item?",[selectedItem valueForKey:@"name"]];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Remove"
-                                                    message:msg
-                                                   delegate:self
-                                          cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"Ok",nil];
-    [alert setTag:1];
-    [alert show];
+    UIAlertController *removeAlert = [UIAlertController alertControllerWithTitle:@"Remove"
+                                                                         message:[NSString stringWithFormat:@"Do you really want to remove %@ item?",[selectedItem valueForKey:@"name"]]
+                                                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action) {}];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action) {
+                                                         
+                                                         NSManagedObject *selectedItem = [self.items objectAtIndex:self.selectedItemIndexPath.row];
+                                                         NSNumber *selectedAmount = (NSNumber *)[selectedItem valueForKey:@"amount"];
+                                                         
+                                                         [[CoreDataManager sharedManager] deleteEntity:selectedItem];
+                                                         [self.items removeObjectAtIndex:self.selectedItemIndexPath.row];
+                                                         [self.collectionViewItems deleteItemsAtIndexPaths:@[self.selectedItemIndexPath]];
+                                                         
+                                                         [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
+                                                             if (error)
+                                                                 NSLog(@"Delete error: %@", [error localizedDescription]);
+                                                         }];
+                                                         
+                                                         [self.delegateItemsVC itemsViewController:self didRemoveItemWithAmount:selectedAmount];
+                                                     }];
+    
+    [removeAlert addAction:cancelAction];
+    [removeAlert addAction:okAction];
+    
+    [self presentViewController:removeAlert animated:YES completion:nil];
 }
 
 #pragma mark - Private Methods

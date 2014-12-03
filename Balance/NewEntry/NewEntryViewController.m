@@ -27,7 +27,7 @@
 
 //private properties
 @property (assign, nonatomic) ItemsType selectedType;
-@property (assign, nonatomic) Person *changedPerson;
+@property (strong, nonatomic) Person *changedPerson;
 
 //action methods
 - (IBAction)doneBtnTap:(id)sender;
@@ -58,7 +58,7 @@
     
     if ([self.datasourceNewEntryVC newEntryMode:self] == NewEntryEditMode)
     {
-        Item *object = (Item *)[self.datasourceNewEntryVC itemSelected:self];
+        Item *object = [self.datasourceNewEntryVC itemSelected:self];
         [self setupEditedItem:object];
     }
 }
@@ -108,12 +108,10 @@
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"DidCreatedNewItem" object:self];
             }
         }];
-        
-        
     }
     else
     {
-        Item *editedItem = (Item *)[self.datasourceNewEntryVC itemSelected:self];
+        Item *editedItem = [self.datasourceNewEntryVC itemSelected:self];
         NSInteger amount = [self.amountSwitch isOn] ? [self.amountTF.text integerValue] : 0;
         
         [editedItem setType:[NSNumber numberWithInteger:self.selectedType]];
