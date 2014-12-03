@@ -123,13 +123,6 @@
     return selectedItem;
 }
 
-#pragma mark - NewEntryVC Delegate
-
-- (void)newEntryVC:(NewEntryViewController *)newEntryVC didUpdatedItem:(Item *)updatedItem
-{
-    //reload this vc + balance vc
-}
-
 #pragma mark - UIAlertView Delegate
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex

@@ -27,6 +27,7 @@
 
 //private properties
 @property (assign, nonatomic) ItemsType selectedType;
+@property (assign, nonatomic) Person *changedPerson;
 
 //action methods
 - (IBAction)doneBtnTap:(id)sender;
@@ -77,6 +78,14 @@
     [self.dateBtn setTitle:[formatter stringFromDate:date] forState:UIControlStateNormal];
 }
 
+#pragma mark - PersonSelectionVC Delegate
+
+- (void)personSelectionViewController:(PersonSelectionViewController *)personSelectionVC didSelectPerson:(Person *)person
+{
+    [self.personBtn setTitle:[person name] forState:UIControlStateNormal];
+    self.changedPerson = person;
+}
+
 #pragma mark - Action Methods
 
 - (IBAction)doneBtnTap:(id)sender
@@ -112,6 +121,8 @@
         [editedItem setName:self.eventNameTF.text];
         [editedItem setDeadline:[NSDate date]];
         [editedItem setNotes:self.notesTF.text];
+        if (self.changedPerson)
+            [editedItem setPerson:self.changedPerson];
         
         [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
             if (error)
@@ -171,7 +182,12 @@
     [self presentViewController:datePickerVC animated:YES completion:nil];
 }
 
-- (IBAction)personBtnTap:(id)sender {
+- (IBAction)personBtnTap:(id)sender
+{
+    PersonSelectionViewController *personSelectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonSelectionViewController"];
+    personSelectionVC.delegatePersonSelectionVC = self;
+    
+    [self.navigationController pushViewController:personSelectionVC animated:YES];
 }
 
 #pragma mark - Private Methods

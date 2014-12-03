@@ -23,15 +23,4 @@
 - (NSNumber *)executeFetchRequest:(NSString *)entity withPredicate:(NSPredicate *)predicate withKeyPath:(NSString *)keyPath;
 - (NSArray *)executeFetchRequestSimple:(NSString *)entity withPredicate:(NSPredicate *)predicate;
 
-
-
-//- (NSFetchedResultsController *)fetchEntitiesWithClassName:(NSString *)className
-//                                           sortDescriptors:(NSArray *)sortDescriptors
-//                                        sectionNameKeyPath:(NSString *)sectionNameKeypath
-//                                                 predicate:(NSPredicate *)predicate;
-
-//- (BOOL)uniqueAttributeForClassName:(NSString *)className
-//                      attributeName:(NSString *)attributeName
-//                     attributeValue:(id)attributeValue;
-
 @end

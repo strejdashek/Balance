@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--New Entry View Controller-->
@@ -188,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="1146.5" y="701"/>
         </scene>
-        <!--View Controller-->
+        <!--Person Selection View Controller-->
         <scene sceneID="g0E-Z1-AkJ">
             <objects>
-                <viewController id="PVK-Qj-5SR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PersonSelectionViewController" id="PVK-Qj-5SR" customClass="PersonSelectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7GI-CJ-vYt"/>
                         <viewControllerLayoutGuide type="bottom" id="OUR-mS-lNU"/>
@@ -228,6 +228,38 @@
                                     <action selector="cancelBtnTap:" destination="0wQ-vc-l4J" eventType="touchUpInside" id="Rnn-nF-LnM"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dGe-Bk-Mfy">
+                                <rect key="frame" x="17" y="78" width="419" height="238"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" id="mZg-1S-xue" customClass="PersonSelectionTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="419" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mZg-1S-xue" id="7gG-et-kaU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Blh-r0-Bas">
+                                                    <rect key="frame" x="8" y="8" width="38" height="28"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDP-uH-Wci">
+                                                    <rect key="frame" x="54" y="11" width="349" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="personFaceIV" destination="Blh-r0-Bas" id="OL8-rd-K6B"/>
+                                            <outlet property="personNameLbl" destination="kDP-uH-Wci" id="dqI-GH-PMc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PVK-Qj-5SR" id="jcV-hl-AyF"/>
+                                    <outlet property="delegate" destination="PVK-Qj-5SR" id="CzE-Dk-GQL"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -237,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiB-Jj-syv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1786.5" y="701"/>
+            <point key="canvasLocation" x="1786.5" y="698"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pUF-Az-g1a">
