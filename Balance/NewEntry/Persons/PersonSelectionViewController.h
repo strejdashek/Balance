@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PersonCreateViewController.h"
 
 @class PersonSelectionViewController;
 @class Person;
@@ -15,7 +16,7 @@
 - (void)personSelectionViewController:(PersonSelectionViewController *)personSelectionVC didSelectPerson:(Person *)person;
 @end
 
-@interface PersonSelectionViewController : UIViewController
+@interface PersonSelectionViewController : UIViewController <PersonCreateVCDelegate>
 
 @property (nonatomic, weak) id<PersonSelectionVCDelegate> delegatePersonSelectionVC;
 

@@ -10,11 +10,17 @@
 #import "PersonSelectionTableViewCell.h"
 #import "CoreDataManager.h"
 #import "Person.h"
+#import "PersonCreateViewController.h"
 
 @interface PersonSelectionViewController ()
 
 //private properties
 @property (nonatomic, strong) NSMutableArray *persons;
+@property (weak, nonatomic) IBOutlet UITableView *personsTableView;
+
+//action methods
+- (IBAction)backBtnTap:(id)sender;
+- (IBAction)createBtnTap:(id)sender;
 
 @end
 
@@ -58,4 +64,26 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - PersonCreateVC Delegate
+
+- (void)personCreateViewController:(PersonCreateViewController *)personCreateVC didCreatePerson:(Person *)person
+{
+    [self.persons addObject:person];
+    [self.personsTableView reloadData];
+}
+
+#pragma mark - Action Methods
+
+- (IBAction)backBtnTap:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)createBtnTap:(id)sender
+{
+    PersonCreateViewController *personCreateVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PersonCreateViewController"];
+    personCreateVC.delegatePersonCreateVC = self;
+    
+    [self.navigationController pushViewController:personCreateVC animated:YES];
+}
 @end

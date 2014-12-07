@@ -13,6 +13,7 @@
 		0F35C39719F439C3008D2804 /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F35C39619F439C3008D2804 /* DatePicker.storyboard */; };
 		0F6FADAF1A2DD5A900CEC3B6 /* PersonSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FADAE1A2DD5A900CEC3B6 /* PersonSelectionViewController.m */; };
 		0F6FADB21A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FADB11A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m */; };
+		0F8484DF1A30593E0076EF34 /* PersonCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8484DE1A30593E0076EF34 /* PersonCreateViewController.m */; };
 		0FA1EE2519D80FC200D4DC66 /* ItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */; };
 		0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */; };
 		0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B819D43C1A00B9A7D7 /* Common.m */; };
@@ -54,6 +55,8 @@
 		0F6FADAE1A2DD5A900CEC3B6 /* PersonSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonSelectionViewController.m; sourceTree = "<group>"; };
 		0F6FADB01A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonSelectionTableViewCell.h; sourceTree = "<group>"; };
 		0F6FADB11A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonSelectionTableViewCell.m; sourceTree = "<group>"; };
+		0F8484DD1A30593E0076EF34 /* PersonCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCreateViewController.h; sourceTree = "<group>"; };
+		0F8484DE1A30593E0076EF34 /* PersonCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCreateViewController.m; sourceTree = "<group>"; };
 		0FA1EE2319D80FC200D4DC66 /* ItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewCell.h; sourceTree = "<group>"; };
 		0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewCell.m; sourceTree = "<group>"; };
 		0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Balance.xcdatamodel; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				0F6FADAE1A2DD5A900CEC3B6 /* PersonSelectionViewController.m */,
 				0F6FADB01A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.h */,
 				0F6FADB11A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m */,
+				0F8484DD1A30593E0076EF34 /* PersonCreateViewController.h */,
+				0F8484DE1A30593E0076EF34 /* PersonCreateViewController.m */,
 			);
 			path = Persons;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F6FADAF1A2DD5A900CEC3B6 /* PersonSelectionViewController.m in Sources */,
+				0F8484DF1A30593E0076EF34 /* PersonCreateViewController.m in Sources */,
 				0F34DE0F19F3C46E00FFE8BB /* Item.m in Sources */,
 				0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */,
 				0FA1EE2519D80FC200D4DC66 /* ItemCollectionViewCell.m in Sources */,
