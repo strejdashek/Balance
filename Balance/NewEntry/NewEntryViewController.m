@@ -99,15 +99,20 @@
         [newItem setName:self.eventNameTF.text];
         [newItem setDeadline:[NSDate date]];
         [newItem setNotes:self.notesTF.text];
+        [newItem setPerson:self.changedPerson];
         
-        [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
-            if (error)
-                NSLog(@"Save new entity error: %@", [error localizedDescription]);
-            else
-            {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"DidCreatedNewItem" object:self];
-            }
-        }];
+        if ([self validItem:newItem])
+        {
+            [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
+                if (error)
+                    NSLog(@"Save new entity error: %@", [error localizedDescription]);
+                else
+                {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"DidCreatedNewItem" object:self];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+            }];
+        }
     }
     else
     {
@@ -122,18 +127,19 @@
         if (self.changedPerson)
             [editedItem setPerson:self.changedPerson];
         
-        [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
-            if (error)
-                NSLog(@"Save edited entity error: %@", [error localizedDescription]);
-            else
-            {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"DidUpdatedItem" object:self];
-            }
-        }];
+        if ([self validItem:editedItem])
+        {
+            [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
+                if (error)
+                    NSLog(@"Save edited entity error: %@", [error localizedDescription]);
+                else
+                {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"DidUpdatedItem" object:self];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }
+            }];
+        }
     }
-    
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelBtnTap:(id)sender
@@ -162,6 +168,7 @@
     {
         [self.amountLbl setHidden:YES];
         [self.amountTF setHidden:YES];
+        [self.amountLbl setText:@""];
     }
 }
 
@@ -235,6 +242,43 @@
     [self.personBtn setTitle:[[item person] name] forState:UIControlStateNormal];
     [self.personBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [self.notesTF setText:[item notes]];
+}
+
+- (BOOL)validItem:(Item *)item
+{
+    BOOL isItemValid = YES;
+    NSString *msg;
+    
+    //there has to be an event name
+    if ([self.eventNameTF.text length] == 0)
+    {
+        msg = @"Enter valid event name";
+        isItemValid = NO;
+    }
+    
+    //item has to belong to some person
+    if ([self.personBtn.titleLabel.text isEqualToString:@"Select"])
+    {
+        msg = @"Enter valid person name";
+        isItemValid = NO;
+    }
+    
+    //if it's not a solid item there has to be an amount
+    if ([self.amountSwitch isOn] && [self.amountTF.text length] == 0)
+    {
+        msg = @"Enter some amount.";
+        isItemValid = NO;
+    }
+    
+    if (!isItemValid)
+    {
+        UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"Error" message:msg preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+        [errorAlert addAction:okAction];
+        [self presentViewController:errorAlert animated:YES completion:nil];
+    }
+    
+    return isItemValid;
 }
 
 @end

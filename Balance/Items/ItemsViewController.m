@@ -88,7 +88,7 @@
     
     Item *item = (Item *)[self.items objectAtIndex:indexPath.row];
     [cell.nameLbl setText:[item name]];
-    [cell.amountLbl setText:[[item amount] stringValue]];
+    ([item.amount integerValue] == 0) ? [cell.amountLbl setHidden:YES] : [cell.amountLbl setText:[[item amount] stringValue]];
     [cell.personLbl setText:[[item person] name]];
     
     return cell;
