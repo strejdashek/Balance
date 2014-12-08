@@ -22,7 +22,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AMOUNT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csk-9f-17N">
-                                <rect key="frame" x="181" y="157" width="57" height="21"/>
+                                <rect key="frame" x="191" y="157" width="57" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter event name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-uh-1p2">
-                                <rect key="frame" x="102" y="77" width="335" height="30"/>
+                                <rect key="frame" x="112" y="77" width="320" height="30"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wgi-5j-G8W">
-                                <rect key="frame" x="101" y="152" width="51" height="31"/>
+                                <rect key="frame" x="111" y="152" width="51" height="31"/>
                                 <color key="onTintColor" red="0.24980379250000001" green="0.78587105349999997" blue="0.2827725324" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="amountSwitchTap:" destination="0wQ-vc-l4J" eventType="valueChanged" id="zXG-2u-fFS"/>
@@ -129,14 +129,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyc-kR-x6M">
-                                <rect key="frame" x="97" y="226" width="340" height="73"/>
+                                <rect key="frame" x="111" y="224" width="319" height="73"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="How much" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cA2-3B-AUX">
-                                <rect key="frame" x="246" y="152" width="191" height="30"/>
+                                <rect key="frame" x="256" y="152" width="176" height="30"/>
                                 <color key="textColor" red="0.19905514669999999" green="0.62621818620000003" blue="0.22532615440000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -147,7 +147,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4F-W0-Jnt">
-                                <rect key="frame" x="102" y="189" width="142" height="30"/>
+                                <rect key="frame" x="112" y="189" width="80" height="30"/>
                                 <state key="normal" title="Select">
                                     <color key="titleColor" red="0.78715093089999999" green="0.78715093089999999" blue="0.78715093089999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -157,13 +157,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRv-eJ-NH6">
-                                <rect key="frame" x="102" y="114" width="335" height="30"/>
+                                <rect key="frame" x="112" y="114" width="320" height="30"/>
                                 <state key="normal" title="Select">
                                     <color key="titleColor" red="0.7871509308510638" green="0.7871509308510638" blue="0.7871509308510638" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="personBtnTap:" destination="0wQ-vc-l4J" eventType="touchUpInside" id="uup-If-uOQ"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tm-ys-hSH">
+                                <rect key="frame" x="191" y="189" width="33" height="30"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearDateBtnTap:" destination="0wQ-vc-l4J" eventType="touchUpInside" id="BFD-1q-wRa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -177,6 +187,7 @@
                         <outlet property="amountSwitch" destination="wgi-5j-G8W" id="fDk-e0-6Wo"/>
                         <outlet property="amountTF" destination="cA2-3B-AUX" id="62M-gZ-bYS"/>
                         <outlet property="assetBtn" destination="bSb-2F-sQM" id="n97-WS-pdA"/>
+                        <outlet property="clearDateBtn" destination="8Tm-ys-hSH" id="TO2-g8-3Ve"/>
                         <outlet property="dateBtn" destination="h4F-W0-Jnt" id="7KZ-2s-3Vm"/>
                         <outlet property="eventNameTF" destination="0P0-uh-1p2" id="L8g-VP-7SN"/>
                         <outlet property="liabilityBtn" destination="0Fa-Kx-wHa" id="0cA-SD-w8y"/>

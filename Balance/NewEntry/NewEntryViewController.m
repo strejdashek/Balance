@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *personBtn;
 @property (weak, nonatomic) IBOutlet UITextView *notesTF;
 @property (weak, nonatomic) IBOutlet UIButton *dateBtn;
+@property (weak, nonatomic) IBOutlet UIButton *clearDateBtn;
 
 //private properties
 @property (assign, nonatomic) ItemsType selectedType;
@@ -37,6 +38,7 @@
 - (IBAction)amountSwitchTap:(id)sender;
 - (IBAction)dateBtnTap:(id)sender;
 - (IBAction)personBtnTap:(id)sender;
+- (IBAction)clearDateBtnTap:(id)sender;
 
 @end
 
@@ -76,6 +78,8 @@
     [formatter setDateFormat:@"MM/dd/yyyy"];
     
     [self.dateBtn setTitle:[formatter stringFromDate:date] forState:UIControlStateNormal];
+    [self.dateBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [self.clearDateBtn setHidden:NO];
 }
 
 #pragma mark - PersonSelectionVC Delegate
@@ -193,6 +197,13 @@
     personSelectionVC.delegatePersonSelectionVC = self;
     
     [self.navigationController pushViewController:personSelectionVC animated:YES];
+}
+
+- (IBAction)clearDateBtnTap:(id)sender
+{
+    [self.dateBtn setTitle:@"Select" forState:UIControlStateNormal];
+    [self.dateBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [self.clearDateBtn setHidden:YES];
 }
 
 #pragma mark - Private Methods
