@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *personLbl;
 @property (weak, nonatomic) IBOutlet UILabel *nameLbl;
 @property (weak, nonatomic) IBOutlet UILabel *amountLbl;
+@property (weak, nonatomic) IBOutlet UIImageView *personPhotoIV;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundIV;
 
 @end

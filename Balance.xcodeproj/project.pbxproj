@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1A0DF71A824306003BBBF6 /* myFace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F1A0DF61A824306003BBBF6 /* myFace.jpg */; };
 		0F34DE0C19F3C3BC00FFE8BB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DE0B19F3C3BC00FFE8BB /* Person.m */; };
 		0F34DE0F19F3C46E00FFE8BB /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DE0E19F3C46E00FFE8BB /* Item.m */; };
 		0F35C39519F439AE008D2804 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F35C39419F439AE008D2804 /* DatePickerViewController.m */; };
 		0F35C39719F439C3008D2804 /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F35C39619F439C3008D2804 /* DatePicker.storyboard */; };
+		0F3723081A83FFFB00C162B9 /* balanceHomeMidTotal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3723071A83FFFB00C162B9 /* balanceHomeMidTotal.png */; };
+		0F3734FA1A80E7D800A85150 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3734F81A80E7D800A85150 /* UIImage+ImageEffects.m */; };
+		0F3735001A810B5300A85150 /* graphArrow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F3734FF1A810B5300A85150 /* graphArrow.jpg */; };
+		0F4551361A83AA5F00E6BF4B /* balanceCellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4551351A83AA5F00E6BF4B /* balanceCellBackground.png */; };
 		0F6FADAF1A2DD5A900CEC3B6 /* PersonSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FADAE1A2DD5A900CEC3B6 /* PersonSelectionViewController.m */; };
 		0F6FADB21A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FADB11A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m */; };
 		0F8484DF1A30593E0076EF34 /* PersonCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8484DE1A30593E0076EF34 /* PersonCreateViewController.m */; };
@@ -44,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		0F17D11119EAFCDB009B4947 /* EnumTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumTypes.h; sourceTree = "<group>"; };
+		0F1A0DF61A824306003BBBF6 /* myFace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = myFace.jpg; sourceTree = "<group>"; };
 		0F34DE0A19F3C3BC00FFE8BB /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		0F34DE0B19F3C3BC00FFE8BB /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		0F34DE0D19F3C46E00FFE8BB /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
@@ -51,6 +57,11 @@
 		0F35C39319F439AE008D2804 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerViewController.h; path = Balance/ReusableControllers/DatePickerViewController.h; sourceTree = SOURCE_ROOT; };
 		0F35C39419F439AE008D2804 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerViewController.m; path = Balance/ReusableControllers/DatePickerViewController.m; sourceTree = SOURCE_ROOT; };
 		0F35C39619F439C3008D2804 /* DatePicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DatePicker.storyboard; path = Balance/ReusableControllers/DatePicker.storyboard; sourceTree = SOURCE_ROOT; };
+		0F3723071A83FFFB00C162B9 /* balanceHomeMidTotal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balanceHomeMidTotal.png; sourceTree = "<group>"; };
+		0F3734F81A80E7D800A85150 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		0F3734F91A80E7D800A85150 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		0F3734FF1A810B5300A85150 /* graphArrow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = graphArrow.jpg; sourceTree = "<group>"; };
+		0F4551351A83AA5F00E6BF4B /* balanceCellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balanceCellBackground.png; sourceTree = "<group>"; };
 		0F6FADAD1A2DD5A900CEC3B6 /* PersonSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonSelectionViewController.h; sourceTree = "<group>"; };
 		0F6FADAE1A2DD5A900CEC3B6 /* PersonSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonSelectionViewController.m; sourceTree = "<group>"; };
 		0F6FADB01A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonSelectionTableViewCell.h; sourceTree = "<group>"; };
@@ -107,6 +118,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F3478FB1A80190D00927480 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0F4551351A83AA5F00E6BF4B /* balanceCellBackground.png */,
+				0F3723071A83FFFB00C162B9 /* balanceHomeMidTotal.png */,
+				0F1A0DF61A824306003BBBF6 /* myFace.jpg */,
+				0F3734FF1A810B5300A85150 /* graphArrow.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		0F35C39219F43992008D2804 /* ReusableControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +197,8 @@
 			children = (
 				0FB1A7E619EC4A0C0031B49F /* UIColor+CustomColors.h */,
 				0FB1A7E719EC4A0C0031B49F /* UIColor+CustomColors.m */,
+				0F3734F91A80E7D800A85150 /* UIImage+ImageEffects.h */,
+				0F3734F81A80E7D800A85150 /* UIImage+ImageEffects.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -234,6 +258,7 @@
 				0FABE0BA19D43D5A00B9A7D7 /* CoreData */,
 				0FABE0B619D43BFD00B9A7D7 /* Helpers */,
 				0FB1A7E519EC49690031B49F /* Categories */,
+				0F3478FB1A80190D00927480 /* Images */,
 				0FF20F3919CD8FDF002776F4 /* Info.plist */,
 				0FF20F3A19CD8FDF002776F4 /* main.m */,
 			);
@@ -359,7 +384,11 @@
 			files = (
 				0FF20F4A19CD8FDF002776F4 /* Main.storyboard in Resources */,
 				0FF20F4F19CD8FDF002776F4 /* LaunchScreen.xib in Resources */,
+				0F3735001A810B5300A85150 /* graphArrow.jpg in Resources */,
 				0FF20F7A19CDDC5F002776F4 /* NewEntry.storyboard in Resources */,
+				0F1A0DF71A824306003BBBF6 /* myFace.jpg in Resources */,
+				0F3723081A83FFFB00C162B9 /* balanceHomeMidTotal.png in Resources */,
+				0F4551361A83AA5F00E6BF4B /* balanceCellBackground.png in Resources */,
 				0FF20F4C19CD8FDF002776F4 /* Images.xcassets in Resources */,
 				0F35C39719F439C3008D2804 /* DatePicker.storyboard in Resources */,
 			);
@@ -393,6 +422,7 @@
 				0F35C39519F439AE008D2804 /* DatePickerViewController.m in Sources */,
 				0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */,
 				0F34DE0C19F3C3BC00FFE8BB /* Person.m in Sources */,
+				0F3734FA1A80E7D800A85150 /* UIImage+ImageEffects.m in Sources */,
 				0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */,
 				0FF20F3B19CD8FDF002776F4 /* main.m in Sources */,
 				0FF20F4119CD8FDF002776F4 /* RootViewController.m in Sources */,

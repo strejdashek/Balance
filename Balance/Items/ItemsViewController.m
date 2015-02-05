@@ -11,6 +11,7 @@
 #import "ItemCollectionViewCell.h"
 #import "Item.h"
 #import "Person.h"
+#import "UIColor+CustomColors.h"
 
 @interface ItemsViewController ()
 
@@ -79,17 +80,23 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ItemCollectionViewCell *cell;
+    ItemCollectionViewCell *cell = (ItemCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"LiabilityCell" forIndexPath:indexPath];
     
-    if (self.itemsType == AssetType)
-        cell = (ItemCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"AssetCell" forIndexPath:indexPath];
-    else
-        cell = (ItemCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"LiabilityCell" forIndexPath:indexPath];
-    
+    //subject, who
     Item *item = (Item *)[self.items objectAtIndex:indexPath.row];
     [cell.nameLbl setText:[item name]];
-    ([item.amount integerValue] == 0) ? [cell.amountLbl setHidden:YES] : [cell.amountLbl setText:[[item amount] stringValue]];
     [cell.personLbl setText:[[item person] name]];
+    
+    //amount
+    ([item.amount integerValue] == 0) ? [cell.amountLbl setHidden:YES] : [cell.amountLbl setText:[[item amount] stringValue]];
+    if (self.itemsType == AssetType)
+        [cell.amountLbl setTextColor:[UIColor customGreen]];
+    else
+        [cell.amountLbl setTextColor:[UIColor customRed]];
+    
+    //photo
+    cell.personPhotoIV.layer.cornerRadius = cell.personPhotoIV.frame.size.width / 2;
+    cell.personPhotoIV.clipsToBounds = YES;
     
     return cell;
 }

@@ -7,20 +7,22 @@
 //
 
 #import "RootViewController.h"
+#import "UIImage+ImageEffects.h"
 
 @interface RootViewController ()
 
 //outlets
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UIView *leftGreenView;
-@property (weak, nonatomic) IBOutlet UIView *rightRedView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundIV;
+@property (weak, nonatomic) IBOutlet UIView *bottomBarView;
+@property (weak, nonatomic) IBOutlet UIButton *createEventBtn;
 
 //private properties
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *viewControllers;
 
 //action methods
-- (IBAction)newEventBtnTap:(id)sender;
+- (IBAction)createEventBtnTap:(id)sender;
 
 @end
 
@@ -48,27 +50,23 @@
     
     self.viewControllers = [[NSArray alloc] initWithObjects:assetVC,balanceVC,liabilityVC,nil];
     [self.pageViewController setViewControllers:@[balanceVC] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    
+    self.backgroundIV.image = [self blurWithImageEffects:self.backgroundIV.image];
+    
+    //add pageviewcontroller
+    [self addChildViewController:self.pageViewController];
+    [self.view addSubview:self.pageViewController.view];
+    [self.pageViewController didMoveToParentViewController:self];
+    
+    //move some elements to front
+    [self.view bringSubviewToFront:self.bottomBarView];
+    [self.view bringSubviewToFront:self.pageControl];
+    [self.view bringSubviewToFront:self.createEventBtn];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (UIImage *)blurWithImageEffects:(UIImage *)image
 {
-    [UIView animateWithDuration:1.5
-                          delay:1.0
-                        options: UIViewAnimationOptionCurveEaseOut
-                     animations:^{
-                         
-                         self.leftGreenView.frame = CGRectMake(76, 349, 200, 132);
-                         self.rightRedView.frame = CGRectMake(492, 349, 200, 132);
-                     }
-                     completion:^(BOOL finished){
-                         
-                         //add pageviewcontroller
-                         [self addChildViewController:self.pageViewController];
-                         [self.view addSubview:self.pageViewController.view];
-                         [self.pageViewController didMoveToParentViewController:self];
-                         
-                         [self.view bringSubviewToFront:self.pageControl];
-                     }];
+    return [image applyBlurWithRadius:40 tintColor:[UIColor colorWithWhite:0.2 alpha:0.2] saturationDeltaFactor:1.5 maskImage:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -169,7 +167,7 @@
 
 #pragma mark - Action Methods
 
-- (IBAction)newEventBtnTap:(id)sender
+- (IBAction)createEventBtnTap:(id)sender
 {
     UINavigationController *navigationController = [[UIStoryboard storyboardWithName:@"NewEntry" bundle:nil] instantiateViewControllerWithIdentifier:@"NewEntryNavigationController"];
     NewEntryViewController *newEntryVC  = navigationController.viewControllers[0];

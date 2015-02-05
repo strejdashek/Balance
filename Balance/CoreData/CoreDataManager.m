@@ -191,6 +191,14 @@ static CoreDataManager *coreDataManager;
     [thirdL setNotes:@"BPL Gunners - QPR and Bubbels - Gunners."];
     [thirdL setPerson:richard];
     
+    Item *fourthL = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
+    [fourthL setAmount:[NSNumber numberWithInteger:0]];
+    [fourthL setType:[NSNumber numberWithInt:LiabilityType]];
+    [fourthL setDeadline:[NSDate date]];
+    [fourthL setName:@"Bike"];
+    [fourthL setNotes:@"For one week trip."];
+    [fourthL setPerson:george];
+    
     //*********************************** ASSETS ***********************************
     
     Item *firstA = [[CoreDataManager sharedManager] createEntityForName:@"Item"];

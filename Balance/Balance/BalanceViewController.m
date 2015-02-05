@@ -15,12 +15,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalAssetsLbl;
 @property (weak, nonatomic) IBOutlet UILabel *totalLiabilitiesLbl;
 @property (weak, nonatomic) IBOutlet UILabel *balanceLbl;
+@property (weak, nonatomic) IBOutlet UILabel *totalAssetThingsLbl;
+@property (weak, nonatomic) IBOutlet UILabel *totalLiabilityThingsLbl;
+@property (weak, nonatomic) IBOutlet UILabel *numOfAssetsLbl;
+@property (weak, nonatomic) IBOutlet UILabel *numOfLiabilitiesLbl;
 
-@property (weak, nonatomic) IBOutlet UIView *totalBalanceView;
 
 //action methods
-- (IBAction)totalAssetsBtnTap:(id)sender;
-- (IBAction)totalLiabilitiesBtnTap:(id)sender;
 
 @end
 
@@ -29,9 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.totalBalanceView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.totalBalanceView.layer.borderWidth = 1.5f;
 
     [self reloadTotals];
     
@@ -88,29 +86,29 @@
     [self reloadBalance];
 }
 
-#pragma mark - Action Methods
-
-- (IBAction)totalAssetsBtnTap:(id)sender
-{
-    [self.delegateBalanceVC balanceViewController:self didSelectTotalItemType:AssetType];
-}
-
-- (IBAction)totalLiabilitiesBtnTap:(id)sender
-{
-    [self.delegateBalanceVC balanceViewController:self didSelectTotalItemType:LiabilityType];
-}
-
 #pragma mark - Private Methods
 
 - (void)reloadTotals
 {
     NSPredicate *predicateAssets = [NSPredicate predicateWithFormat:@"type == %d",AssetType];
-    NSNumber *totalAsset = [[CoreDataManager sharedManager] executeFetchRequest:@"Item" withPredicate:predicateAssets withKeyPath:@"@sum.amount"];
+    NSArray *assets = [[CoreDataManager sharedManager] executeFetchRequestSimple:@"Item" withPredicate:predicateAssets];
+    NSNumber *totalAsset = [assets valueForKeyPath:@"@sum.amount"];
+    
     NSPredicate *predicateLiabilities = [NSPredicate predicateWithFormat:@"type == %d",LiabilityType];
-    NSNumber *totalLiability = [[CoreDataManager sharedManager] executeFetchRequest:@"Item" withPredicate:predicateLiabilities withKeyPath:@"@sum.amount"];
+    NSArray *liabilities = [[CoreDataManager sharedManager] executeFetchRequestSimple:@"Item" withPredicate:predicateLiabilities];
+    NSNumber *totalLiability = [liabilities valueForKeyPath:@"@sum.amount"];
+    
+    NSPredicate *predicateAssetThings = [NSPredicate predicateWithFormat:@"amount == 0 AND type == %d",AssetType];
+    NSArray *assetThings = [[CoreDataManager sharedManager] executeFetchRequestSimple:@"Item" withPredicate:predicateAssetThings];
+    NSPredicate *predicateLiabilityThings = [NSPredicate predicateWithFormat:@"amount == 0 AND type == %d",LiabilityType];
+    NSArray *liabilityThings = [[CoreDataManager sharedManager] executeFetchRequestSimple:@"Item" withPredicate:predicateLiabilityThings];
     
     [self.totalAssetsLbl setText:[totalAsset stringValue]];
     [self.totalLiabilitiesLbl setText:[totalLiability stringValue]];
+    [self.totalAssetThingsLbl setText:[NSString stringWithFormat:@"%ld things",(long)[assetThings count]]];
+    [self.totalLiabilityThingsLbl setText:[NSString stringWithFormat:@"%ld things",(long)[liabilityThings count]]];
+    [self.numOfAssetsLbl setText:[NSString stringWithFormat:@"%ld",(long)[assets count]]];
+    [self.numOfLiabilitiesLbl setText:[NSString stringWithFormat:@"%ld",(long)[liabilities count]]];
     
     [self reloadBalance];
 }

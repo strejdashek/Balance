@@ -237,18 +237,18 @@
 - (void)setupEditedItem:(Item *)item
 {    
     [self.eventNameTF setText:[item name]];
-    if ([[item amount] integerValue] == 0)
-    {
-        [self.amountSwitch setOn:NO];
-        [self.amountLbl setHidden:YES];
-        [self.amountTF setHidden:YES];
-    }
-    else
+    if ([[item amount] integerValue] != 0)
     {
         [self.amountSwitch setOn:YES];
         [self.amountLbl setHidden:NO];
         [self.amountTF setHidden:NO];
         [self.amountTF setText:[[item amount] stringValue]];
+    }
+    else
+    {
+        [self.amountSwitch setOn:NO];
+        [self.amountLbl setHidden:YES];
+        [self.amountTF setHidden:YES];
     }
     [self.personBtn setTitle:[[item person] name] forState:UIControlStateNormal];
     [self.personBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
