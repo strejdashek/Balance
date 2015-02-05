@@ -74,7 +74,7 @@ static CoreDataManager *coreDataManager;
     {
         self.managedObjectContext = [[NSManagedObjectContext alloc] init];
         [self.managedObjectContext setPersistentStoreCoordinator:self.persistentStoreCoordinator];
-        NSLog(@"Db file set up: %@",[persistentURL absoluteString]);
+        NSLog(@"Db file set up: %@/%@.sqlite",[NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0],kProjectName);
     }
     else
     {
