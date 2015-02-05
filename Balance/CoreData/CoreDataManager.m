@@ -74,12 +74,13 @@ static CoreDataManager *coreDataManager;
     {
         self.managedObjectContext = [[NSManagedObjectContext alloc] init];
         [self.managedObjectContext setPersistentStoreCoordinator:self.persistentStoreCoordinator];
-        NSLog(@"Db file set up: %@/%@.sqlite",[NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0],kProjectName);
     }
     else
     {
         NSLog(@"Error: %@", error.description);
     }
+    
+    NSLog(@"Db file: %@/%@.sqlite",[NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0],kProjectName);
 }
 
 #pragma mark - Basic Methods
