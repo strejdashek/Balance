@@ -62,6 +62,14 @@
     [self.view bringSubviewToFront:self.bottomBarView];
     [self.view bringSubviewToFront:self.pageControl];
     [self.view bringSubviewToFront:self.createEventBtn];
+    
+    //fade out
+    UIView *fadeOutView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
+    fadeOutView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [self.view addSubview:fadeOutView];
+    [UIView animateWithDuration:0.7 animations:^() {
+        fadeOutView.alpha = 0.0f;
+    }];
 }
 
 - (UIImage *)blurWithImageEffects:(UIImage *)image
