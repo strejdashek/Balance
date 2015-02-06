@@ -220,13 +220,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Servis Auto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBs-EI-F3K">
-                                                    <rect key="frame" x="157" y="68" width="175" height="20"/>
+                                                    <rect key="frame" x="157" y="42" width="175" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lenka" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnJ-zS-efu">
-                                                    <rect key="frame" x="157" y="41" width="175" height="21"/>
+                                                    <rect key="frame" x="157" y="67" width="175" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -269,8 +269,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="amountLbl" destination="kSI-Lw-yBy" id="9M5-SE-ddC"/>
-                                            <outlet property="nameLbl" destination="RBs-EI-F3K" id="SXc-TO-fdq"/>
-                                            <outlet property="personLbl" destination="QnJ-zS-efu" id="e1Z-H8-7Fb"/>
+                                            <outlet property="nameLbl" destination="RBs-EI-F3K" id="bpo-Hr-OpL"/>
+                                            <outlet property="personLbl" destination="QnJ-zS-efu" id="AEF-FB-G51"/>
                                             <outlet property="personPhotoIV" destination="shi-2t-J2N" id="1x2-F8-BcJ"/>
                                         </connections>
                                     </collectionViewCell>
