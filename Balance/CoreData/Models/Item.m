@@ -15,7 +15,7 @@
 @dynamic amount;
 @dynamic deadline;
 @dynamic name;
-@dynamic notes;
+@dynamic thumbnailName;
 @dynamic type;
 @dynamic person;
 

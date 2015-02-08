@@ -10,5 +10,10 @@
 #define Balance_Constants_h
 
 static NSString *kProjectName = @"Balance";
+static NSString *kThumbnailsFolder = @"Thumbnails";
+static NSString *kThumbnailForMoney = @"defaultMoney.png";
+static NSString *kThumbnailForThing = @"defaultThing.png";
+static NSString *kThumbnailForMoneyRetina = @"defaultMoney@2x.png";
+static NSString *kThumbnailForThingRetina = @"defaultThing@2x.png";
 
 #endif

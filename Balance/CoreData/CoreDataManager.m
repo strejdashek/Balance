@@ -62,7 +62,7 @@ static CoreDataManager *coreDataManager;
     
     //init coordinator
     self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-    NSURL *persistentURL = [[Common documentsDir] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite", kProjectName]];
+    NSURL *persistentURL = [[Common documentsDirURL] URLByAppendingPathComponent:[Common dbName]];
     NSError *error = nil;
     NSPersistentStore *persistentStore = [self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
                                                                                        configuration:nil
@@ -79,8 +79,6 @@ static CoreDataManager *coreDataManager;
     {
         NSLog(@"Error: %@", error.description);
     }
-    
-    NSLog(@"Db file: %@/%@.sqlite",[NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0],kProjectName);
 }
 
 #pragma mark - Basic Methods
@@ -174,7 +172,7 @@ static CoreDataManager *coreDataManager;
     [firstL setType:[NSNumber numberWithInt:LiabilityType]];
     [firstL setDeadline:[NSDate date]];
     [firstL setName:@"Food"];
-    [firstL setNotes:@"Weekly shopping."];
+    [firstL setThumbnailName:kThumbnailForMoney];
     [firstL setPerson:susan];
     
     Item *secondL = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
@@ -182,6 +180,7 @@ static CoreDataManager *coreDataManager;
     [secondL setType:[NSNumber numberWithInt:LiabilityType]];
     [secondL setDeadline:[NSDate date]];
     [secondL setName:@"Headphones"];
+    [secondL setThumbnailName:kThumbnailForMoney];
     [secondL setPerson:richard];
     
     Item *thirdL = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
@@ -189,7 +188,7 @@ static CoreDataManager *coreDataManager;
     [thirdL setType:[NSNumber numberWithInt:LiabilityType]];
     [thirdL setDeadline:[NSDate date]];
     [thirdL setName:@"Tickets"];
-    [thirdL setNotes:@"BPL Gunners - QPR and Bubbels - Gunners."];
+    [thirdL setThumbnailName:kThumbnailForMoney];
     [thirdL setPerson:richard];
     
     Item *fourthL = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
@@ -197,7 +196,7 @@ static CoreDataManager *coreDataManager;
     [fourthL setType:[NSNumber numberWithInt:LiabilityType]];
     [fourthL setDeadline:[NSDate date]];
     [fourthL setName:@"Bike"];
-    [fourthL setNotes:@"For one week trip."];
+    [fourthL setThumbnailName:kThumbnailForThing];
     [fourthL setPerson:george];
     
     //*********************************** ASSETS ***********************************
@@ -207,7 +206,7 @@ static CoreDataManager *coreDataManager;
     [firstA setType:[NSNumber numberWithInt:AssetType]];
     [firstA setDeadline:[NSDate date]];
     [firstA setName:@"Car Service"];
-    [firstA setNotes:@"Oil + tires."];
+    [firstA setThumbnailName:kThumbnailForMoney];
     [firstA setPerson:susan];
     
     Item *secondA = [[CoreDataManager sharedManager] createEntityForName:@"Item"];
@@ -215,6 +214,7 @@ static CoreDataManager *coreDataManager;
     [secondA setType:[NSNumber numberWithInt:AssetType]];
     [secondA setDeadline:[NSDate date]];
     [secondA setName:@"Bet"];
+    [secondA setThumbnailName:kThumbnailForMoney];
     [secondA setPerson:george];
 
     //*********************************** SAVE ROUTINE ***********************************

@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSNumber *amount;
 @property (nonatomic, retain) NSDate *deadline;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *notes;
+@property (nonatomic, retain) NSString *thumbnailName;
 @property (nonatomic, retain) NSNumber *type;
 @property (nonatomic, retain) Person *person;
 

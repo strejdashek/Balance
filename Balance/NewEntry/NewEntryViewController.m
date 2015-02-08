@@ -11,6 +11,8 @@
 #import "Item.h"
 #import "UIColor+CustomColors.h"
 #import "Person.h"
+#import "ThumbnailSelectionViewController.h"
+#import "Common.h"
 
 @interface NewEntryViewController ()
 
@@ -22,13 +24,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *amountTF;
 @property (weak, nonatomic) IBOutlet UILabel *amountLbl;
 @property (weak, nonatomic) IBOutlet UIButton *personBtn;
-@property (weak, nonatomic) IBOutlet UITextView *notesTF;
 @property (weak, nonatomic) IBOutlet UIButton *dateBtn;
 @property (weak, nonatomic) IBOutlet UIButton *clearDateBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailIV;
 
 //private properties
 @property (assign, nonatomic) ItemsType selectedType;
 @property (strong, nonatomic) Person *changedPerson;
+@property (strong, nonatomic) NSString *selectedThumbnail;
 
 //action methods
 - (IBAction)doneBtnTap:(id)sender;
@@ -63,6 +66,10 @@
         Item *object = [self.datasourceNewEntryVC itemSelected:self];
         [self setupEditedItem:object];
     }
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(thumbnailIVTap)];
+    [self.thumbnailIV setUserInteractionEnabled:YES];
+    [self.thumbnailIV addGestureRecognizer:singleTap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -102,7 +109,6 @@
         [newItem setAmount:[NSNumber numberWithInteger:amount]];
         [newItem setName:self.eventNameTF.text];
         [newItem setDeadline:[NSDate date]];
-        [newItem setNotes:self.notesTF.text];
         [newItem setPerson:self.changedPerson];
         
         if ([self validItem:newItem])
@@ -127,7 +133,6 @@
         [editedItem setAmount:[NSNumber numberWithInteger:amount]];
         [editedItem setName:self.eventNameTF.text];
         [editedItem setDeadline:[NSDate date]];
-        [editedItem setNotes:self.notesTF.text];
         if (self.changedPerson)
             [editedItem setPerson:self.changedPerson];
         
@@ -208,6 +213,13 @@
 
 #pragma mark - Private Methods
 
+- (void)thumbnailIVTap
+{
+    ThumbnailSelectionViewController *thumbnailSelectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ThumbnailSelectionViewController"];
+    
+    [self.navigationController pushViewController:thumbnailSelectionVC animated:YES];
+}
+
 - (void)switchToItemType:(ItemsType)itemType
 {
     self.selectedType = itemType;
@@ -237,6 +249,11 @@
 - (void)setupEditedItem:(Item *)item
 {    
     [self.eventNameTF setText:[item name]];
+    [self.personBtn setTitle:[[item person] name] forState:UIControlStateNormal];
+    [self.personBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    NSData *pngData = [NSData dataWithContentsOfFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:[item thumbnailName]]];
+    self.thumbnailIV.image = [UIImage imageWithData:pngData];
+    
     if ([[item amount] integerValue] != 0)
     {
         [self.amountSwitch setOn:YES];
@@ -250,9 +267,6 @@
         [self.amountLbl setHidden:YES];
         [self.amountTF setHidden:YES];
     }
-    [self.personBtn setTitle:[[item person] name] forState:UIControlStateNormal];
-    [self.personBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    [self.notesTF setText:[item notes]];
 }
 
 - (BOOL)validItem:(Item *)item

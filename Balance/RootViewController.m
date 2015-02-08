@@ -67,7 +67,7 @@
     UIView *fadeOutView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
     fadeOutView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:fadeOutView];
-    [UIView animateWithDuration:0.7 animations:^() {
+    [UIView animateWithDuration:1.0 animations:^() {
         fadeOutView.alpha = 0.0f;
     }];
 }

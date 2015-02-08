@@ -12,6 +12,7 @@
 #import "Item.h"
 #import "Person.h"
 #import "UIColor+CustomColors.h"
+#import "Common.h"
 
 @interface ItemsViewController ()
 
@@ -95,8 +96,8 @@
         [cell.amountLbl setTextColor:[UIColor customRed]];
     
     //photo
-    cell.personPhotoIV.layer.cornerRadius = cell.personPhotoIV.frame.size.width / 2;
-    cell.personPhotoIV.clipsToBounds = YES;
+    NSData *pngData = [NSData dataWithContentsOfFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:[item thumbnailName]]];
+    cell.personPhotoIV.image = [UIImage imageWithData:pngData];
     
     return cell;
 }

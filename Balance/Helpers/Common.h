@@ -10,6 +10,14 @@
 
 @interface Common : NSObject
 
-+ (NSURL *)documentsDir;
+//system paths
++ (NSString *)documentsDirPath;
++ (NSURL *)documentsDirURL;
++ (NSString *)dbPath;
++ (NSString *)dbName;
++ (NSString *)thumbnailsDirPath;
+
++ (void)initDocumentsSubdirsStructure;
++ (BOOL)seedDatabase;
 
 @end

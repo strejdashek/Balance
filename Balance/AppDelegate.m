@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "CoreDataManager.h"
+#import "Common.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //[CoreDataManager seed];
+    //init db if needed
+    [Common seedDatabase];
+    
+    //init thumbnail folder along with default images
+    [Common initDocumentsSubdirsStructure];
     
     return YES;
 }
