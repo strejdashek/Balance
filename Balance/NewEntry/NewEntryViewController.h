@@ -10,6 +10,7 @@
 #import "EnumTypes.h"
 #import "DatePickerViewController.h"
 #import "PersonSelectionViewController.h"
+#import "ThumbnailSelectionViewController.h"
 
 @class NewEntryViewController;
 @class NSManagedObject;
@@ -23,7 +24,7 @@
 - (Item *)itemSelected:(NewEntryViewController *)newEntryVC;
 @end
 
-@interface NewEntryViewController : UIViewController <DatePickerVCDelegate, PersonSelectionVCDelegate>
+@interface NewEntryViewController : UIViewController <DatePickerVCDelegate, PersonSelectionVCDelegate, ThumbnailSelectionVCDataSource, ThumbnailSelectionVCDelegate>
 
 //delegates and datasources
 @property (nonatomic, weak) id<NewEntryVCDataSource> datasourceNewEntryVC;

@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThumbnailSelectionViewController : UIViewController
+@class ThumbnailSelectionViewController;
+
+@protocol ThumbnailSelectionVCDelegate<NSObject>
+@required
+- (void)thumbnailSelectionViewController:(ThumbnailSelectionViewController *)thumbnailSelectionVC didSelectThumbnail:(NSString *)thumbnailName;
+@end
+
+@protocol ThumbnailSelectionVCDataSource<NSObject>
+@required
+- (NSString *)thumbnailNameSelected:(ThumbnailSelectionViewController *)thumbnailSelectionVC;
+@end
+
+@interface ThumbnailSelectionViewController : UIViewController <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+
+@property (nonatomic, weak) id<ThumbnailSelectionVCDelegate> delegateThumbnailSelectionVC;
+@property (nonatomic, weak) id<ThumbnailSelectionVCDataSource> dataSourceThumbnailSelectionVC;
 
 @end

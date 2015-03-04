@@ -19,8 +19,8 @@
     CGFloat widthOriginal = self.size.width;
     if (heightOriginal > widthOriginal)
     {
-        CGFloat cropY = (heightOriginal - widthOriginal) / 2;
-        CGRect requestedCrop = CGRectMake(0, cropY, widthOriginal, widthOriginal);
+        CGFloat cropX = (heightOriginal - widthOriginal) / 2;
+        CGRect requestedCrop = CGRectMake(cropX, 0, widthOriginal, widthOriginal);
         thumbnail = [self crop:requestedCrop];
     }
     else
@@ -30,7 +30,7 @@
         thumbnail = [self crop:requestedCrop];
     }
     
-    //scale it to have it 65x65
+    //scale it
     thumbnail = [UIImage imageWithImage:thumbnail scaledToSize:size];
     
     //make it circle

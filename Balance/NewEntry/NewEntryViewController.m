@@ -11,8 +11,8 @@
 #import "Item.h"
 #import "UIColor+CustomColors.h"
 #import "Person.h"
-#import "ThumbnailSelectionViewController.h"
 #import "Common.h"
+#import "Constants.h"
 
 @interface NewEntryViewController ()
 
@@ -97,6 +97,22 @@
     self.changedPerson = person;
 }
 
+#pragma mark - PersonSelectionVC Delegate
+
+- (void)thumbnailSelectionViewController:(ThumbnailSelectionViewController *)thumbnailSelectionVC didSelectThumbnail:(NSString *)thumbnailName
+{
+    NSData *pngData = [NSData dataWithContentsOfFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:thumbnailName]];
+    self.thumbnailIV.image = [UIImage imageWithData:pngData];
+    self.selectedThumbnail = thumbnailName;
+}
+
+#pragma mark - PersonSelectionVC DataSource
+
+- (NSString *)thumbnailNameSelected:(ThumbnailSelectionViewController *)thumbnailSelectionVC
+{
+    return self.selectedThumbnail;
+}
+
 #pragma mark - Action Methods
 
 - (IBAction)doneBtnTap:(id)sender
@@ -110,6 +126,10 @@
         [newItem setName:self.eventNameTF.text];
         [newItem setDeadline:[NSDate date]];
         [newItem setPerson:self.changedPerson];
+        if ([self.selectedThumbnail length] > 0)
+            [newItem setThumbnailName:self.selectedThumbnail];
+        else
+            [newItem setThumbnailName:([self.amountSwitch isOn]) ? kThumbnailForMoney : kThumbnailForThing];
         
         if ([self validItem:newItem])
         {
@@ -135,6 +155,7 @@
         [editedItem setDeadline:[NSDate date]];
         if (self.changedPerson)
             [editedItem setPerson:self.changedPerson];
+        [editedItem setThumbnailName:self.selectedThumbnail];
         
         if ([self validItem:editedItem])
         {
@@ -177,8 +198,10 @@
     {
         [self.amountLbl setHidden:YES];
         [self.amountTF setHidden:YES];
-        [self.amountLbl setText:@""];
+        [self.amountTF setText:@""];
     }
+    
+    NSLog(@"%hhd",[self.amountLbl isHidden]);
 }
 
 - (IBAction)dateBtnTap:(id)sender
@@ -216,6 +239,8 @@
 - (void)thumbnailIVTap
 {
     ThumbnailSelectionViewController *thumbnailSelectionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ThumbnailSelectionViewController"];
+    thumbnailSelectionVC.delegateThumbnailSelectionVC = self;
+    thumbnailSelectionVC.dataSourceThumbnailSelectionVC = self;
     
     [self.navigationController pushViewController:thumbnailSelectionVC animated:YES];
 }

@@ -67,17 +67,17 @@
         NSData *pngData = UIImagePNGRepresentation(thumbnailMoney);
         [pngData writeToFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:kThumbnailForMoney] atomically:YES];
         
-        UIImage *thumbnailMoneyRetina = [UIImage imageNamed:kThumbnailForMoneyRetina];
-        pngData = UIImagePNGRepresentation(thumbnailMoneyRetina);
-        [pngData writeToFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:kThumbnailForMoneyRetina] atomically:YES];
+//        UIImage *thumbnailMoneyRetina = [UIImage imageNamed:kThumbnailForMoneyRetina];
+//        pngData = UIImagePNGRepresentation(thumbnailMoneyRetina);
+//        [pngData writeToFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:kThumbnailForMoneyRetina] atomically:YES];
         
         UIImage *thumbnailThing = [UIImage imageNamed:kThumbnailForThing];
         pngData = UIImagePNGRepresentation(thumbnailThing);
         [pngData writeToFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:kThumbnailForThing] atomically:YES];
         
-        UIImage *thumbnailThingRetina = [UIImage imageNamed:kThumbnailForThingRetina];
-        pngData = UIImagePNGRepresentation(thumbnailThingRetina);
-        [pngData writeToFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:kThumbnailForThingRetina] atomically:YES];
+//        UIImage *thumbnailThingRetina = [UIImage imageNamed:kThumbnailForThingRetina];
+//        pngData = UIImagePNGRepresentation(thumbnailThingRetina);
+//        [pngData writeToFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:kThumbnailForThingRetina] atomically:YES];
     }
 }
 
