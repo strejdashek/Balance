@@ -88,7 +88,18 @@
     [cell.personLbl setText:[[item person] name]];
     
     //amount
-    ([item.amount integerValue] == 0) ? [cell.amountLbl setHidden:YES] : [cell.amountLbl setText:[[item amount] stringValue]];
+    if ([item.amount integerValue] == 0)
+    {
+        [cell.amountLbl setHidden:YES];
+        [cell.amountLbl setText:@""];
+    }
+    else
+    {
+        [cell.amountLbl setHidden:NO];
+        [cell.amountLbl setText:[[item amount] stringValue]];
+    }
+    
+    //amount color
     if (self.itemsType == AssetType)
         [cell.amountLbl setTextColor:[UIColor customGreen]];
     else
