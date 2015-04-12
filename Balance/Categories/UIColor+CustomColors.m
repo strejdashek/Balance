@@ -20,4 +20,9 @@
     return [UIColor colorWithRed:64/255.0f green:200/255.0f blue:72/255.0f alpha:1.0f];
 }
 
++ (UIColor *)modalGray
+{
+    return [UIColor colorWithRed:64/221.0f green:200/221.0f blue:72/221.0f alpha:1.0f];
+}
+
 @end

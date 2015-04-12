@@ -57,12 +57,11 @@
     
     if ([self.datasourceNewEntryVC newEntryMode:self] == NewEntryEditMode)
     {
+        //disable changing of type
         [self.liabilityBtn setUserInteractionEnabled:NO];
         [self.assetBtn setUserInteractionEnabled:NO];
-    }
-    
-    if ([self.datasourceNewEntryVC newEntryMode:self] == NewEntryEditMode)
-    {
+        
+        //display item's fields
         Item *object = [self.datasourceNewEntryVC itemSelected:self];
         [self setupEditedItem:object];
     }
@@ -95,6 +94,7 @@
 {
     [self.personBtn setTitle:[person name] forState:UIControlStateNormal];
     self.changedPerson = person;
+    NSLog(@"%@",self.changedPerson);
 }
 
 #pragma mark - PersonSelectionVC Delegate
@@ -131,17 +131,25 @@
         else
             [newItem setThumbnailName:([self.amountSwitch isOn]) ? kThumbnailForMoney : kThumbnailForThing];
         
+        NSLog(@"%@",self.changedPerson);
+        
         if ([self validItem:newItem])
         {
             [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
                 if (error)
-                    NSLog(@"Save new entity error: %@", [error localizedDescription]);
+                {
+                    NSLog(@"Save new entity error: %@", error);
+                }
                 else
                 {
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"DidCreatedNewItem" object:self];
                     [self dismissViewControllerAnimated:YES completion:nil];
                 }
             }];
+        }
+        else
+        {
+            [[CoreDataManager sharedManager] deleteEntity:newItem];
         }
     }
     else
@@ -161,7 +169,7 @@
         {
             [[CoreDataManager sharedManager] saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
                 if (error)
-                    NSLog(@"Save edited entity error: %@", [error localizedDescription]);
+                    NSLog(@"Save edited entity error: %@", error);
                 else
                 {
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"DidUpdatedItem" object:self];
@@ -200,8 +208,6 @@
         [self.amountTF setHidden:YES];
         [self.amountTF setText:@""];
     }
-    
-    NSLog(@"%hhd",[self.amountLbl isHidden]);
 }
 
 - (IBAction)dateBtnTap:(id)sender
@@ -278,6 +284,8 @@
     [self.personBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     NSData *pngData = [NSData dataWithContentsOfFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:[item thumbnailName]]];
     self.thumbnailIV.image = [UIImage imageWithData:pngData];
+    self.changedPerson = [item person];
+    self.selectedThumbnail = [item thumbnailName];
     
     if ([[item amount] integerValue] != 0)
     {

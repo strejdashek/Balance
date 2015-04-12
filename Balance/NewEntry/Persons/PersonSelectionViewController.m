@@ -11,6 +11,7 @@
 #import "CoreDataManager.h"
 #import "Person.h"
 #import "PersonCreateViewController.h"
+#import "UIColor+CustomColors.h"
 
 @interface PersonSelectionViewController ()
 
@@ -31,6 +32,8 @@
     [super viewDidLoad];
     
     self.persons = [NSMutableArray arrayWithArray:[[CoreDataManager sharedManager] executeFetchRequestSimple:@"Person" withPredicate:nil]];
+    
+    self.personsTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +55,8 @@
     
     [cell.personNameLbl setText:[person name]];
     
+    [cell setBackgroundColor:[UIColor clearColor]];
+    
     return cell;
 }
 
@@ -60,6 +65,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Person *person = [self.persons objectAtIndex:indexPath.row];
+    NSLog(@"%@",person);
     [self.delegatePersonSelectionVC personSelectionViewController:self didSelectPerson:person];
     [self.navigationController popViewControllerAnimated:YES];
 }

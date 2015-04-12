@@ -12,5 +12,6 @@
 
 + (UIColor *)customRed;
 + (UIColor *)customGreen;
++ (UIColor *)modalGray;
 
 @end
