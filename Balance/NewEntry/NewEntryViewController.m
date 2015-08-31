@@ -94,7 +94,6 @@
 {
     [self.personBtn setTitle:[person name] forState:UIControlStateNormal];
     self.changedPerson = person;
-    NSLog(@"%@",self.changedPerson);
 }
 
 #pragma mark - PersonSelectionVC Delegate
@@ -124,14 +123,12 @@
         [newItem setType:[NSNumber numberWithInteger:self.selectedType]];
         [newItem setAmount:[NSNumber numberWithInteger:amount]];
         [newItem setName:self.eventNameTF.text];
-        [newItem setDeadline:[NSDate date]];
+        [newItem setDeadline:[self selectedDate]];
         [newItem setPerson:self.changedPerson];
         if ([self.selectedThumbnail length] > 0)
             [newItem setThumbnailName:self.selectedThumbnail];
         else
             [newItem setThumbnailName:([self.amountSwitch isOn]) ? kThumbnailForMoney : kThumbnailForThing];
-        
-        NSLog(@"%@",self.changedPerson);
         
         if ([self validItem:newItem])
         {
@@ -160,7 +157,7 @@
         [editedItem setType:[NSNumber numberWithInteger:self.selectedType]];
         [editedItem setAmount:[NSNumber numberWithInteger:amount]];
         [editedItem setName:self.eventNameTF.text];
-        [editedItem setDeadline:[NSDate date]];
+        [editedItem setDeadline:[self selectedDate]];
         if (self.changedPerson)
             [editedItem setPerson:self.changedPerson];
         [editedItem setThumbnailName:self.selectedThumbnail];
@@ -337,6 +334,23 @@
     }
     
     return isItemValid;
+}
+
+- (NSDate *)selectedDate
+{
+    NSString *dateString = self.dateBtn.titleLabel.text;
+    if (dateString)
+    {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MM/dd/yyyy"];
+        [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+        
+        NSDate *date = [formatter dateFromString:dateString];
+        if (date)
+            return date;
+    }
+    
+    return nil;
 }
 
 @end

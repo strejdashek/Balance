@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F281E931A8691CF006CAC60 /* ThumbnailSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F281E921A8691CF006CAC60 /* ThumbnailSelectionViewController.m */; };
-		0F281E961A869D3F006CAC60 /* defaultMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F281E941A869D3F006CAC60 /* defaultMoney.png */; };
-		0F281E971A869D3F006CAC60 /* defaultMoney@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F281E951A869D3F006CAC60 /* defaultMoney@2x.png */; };
-		0F281E9C1A86A169006CAC60 /* defaultThing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F281E9A1A86A169006CAC60 /* defaultThing.png */; };
-		0F281E9D1A86A169006CAC60 /* defaultThing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F281E9B1A86A169006CAC60 /* defaultThing@2x.png */; };
 		0F34DE0C19F3C3BC00FFE8BB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DE0B19F3C3BC00FFE8BB /* Person.m */; };
 		0F34DE0F19F3C46E00FFE8BB /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F34DE0E19F3C46E00FFE8BB /* Item.m */; };
 		0F35C39519F439AE008D2804 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F35C39419F439AE008D2804 /* DatePickerViewController.m */; };
 		0F35C39719F439C3008D2804 /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F35C39619F439C3008D2804 /* DatePicker.storyboard */; };
-		0F3723081A83FFFB00C162B9 /* balanceHomeMidTotal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F3723071A83FFFB00C162B9 /* balanceHomeMidTotal.png */; };
 		0F3734FA1A80E7D800A85150 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3734F81A80E7D800A85150 /* UIImage+ImageEffects.m */; };
-		0F3735001A810B5300A85150 /* graphArrow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F3734FF1A810B5300A85150 /* graphArrow.jpg */; };
-		0F3BD7F41A85496400BB5A16 /* dollar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F3BD7F31A85496400BB5A16 /* dollar.jpg */; };
 		0F3BD7F71A8561CD00BB5A16 /* UIImage+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BD7F61A8561CD00BB5A16 /* UIImage+Size.m */; };
-		0F4551361A83AA5F00E6BF4B /* balanceCellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F4551351A83AA5F00E6BF4B /* balanceCellBackground.png */; };
-		0F6FADAF1A2DD5A900CEC3B6 /* PersonSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FADAE1A2DD5A900CEC3B6 /* PersonSelectionViewController.m */; };
-		0F6FADB21A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6FADB11A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m */; };
-		0F8484DF1A30593E0076EF34 /* PersonCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8484DE1A30593E0076EF34 /* PersonCreateViewController.m */; };
+		0F420E8E1B94B3900098C4A1 /* balanceCellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F420E861B94B3900098C4A1 /* balanceCellBackground.png */; };
+		0F420E8F1B94B3900098C4A1 /* balanceHomeMidTotal.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F420E871B94B3900098C4A1 /* balanceHomeMidTotal.png */; };
+		0F420E901B94B3900098C4A1 /* defaultMoney.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F420E881B94B3900098C4A1 /* defaultMoney.png */; };
+		0F420E911B94B3900098C4A1 /* defaultMoney@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F420E891B94B3900098C4A1 /* defaultMoney@2x.png */; };
+		0F420E921B94B3900098C4A1 /* defaultThing.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F420E8A1B94B3900098C4A1 /* defaultThing.png */; };
+		0F420E931B94B3900098C4A1 /* defaultThing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F420E8B1B94B3900098C4A1 /* defaultThing@2x.png */; };
+		0F420E941B94B3900098C4A1 /* dollar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F420E8C1B94B3900098C4A1 /* dollar.jpg */; };
+		0F420E951B94B3900098C4A1 /* graphArrow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F420E8D1B94B3900098C4A1 /* graphArrow.jpg */; };
+		0F420E981B94C05C0098C4A1 /* ThumbnailSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F420E971B94C05C0098C4A1 /* ThumbnailSelectionViewController.m */; };
+		0F420E9F1B94C0740098C4A1 /* PersonCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F420E9A1B94C0740098C4A1 /* PersonCreateViewController.m */; };
+		0F420EA01B94C0740098C4A1 /* PersonSelectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F420E9C1B94C0740098C4A1 /* PersonSelectionTableViewCell.m */; };
+		0F420EA11B94C0740098C4A1 /* PersonSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F420E9E1B94C0740098C4A1 /* PersonSelectionViewController.m */; };
 		0FA1EE2519D80FC200D4DC66 /* ItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */; };
 		0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B019D3F36B00B9A7D7 /* Balance.xcdatamodeld */; };
 		0FABE0B919D43C1A00B9A7D7 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FABE0B819D43C1A00B9A7D7 /* Common.m */; };
@@ -55,12 +55,6 @@
 
 /* Begin PBXFileReference section */
 		0F17D11119EAFCDB009B4947 /* EnumTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumTypes.h; sourceTree = "<group>"; };
-		0F281E911A8691CF006CAC60 /* ThumbnailSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailSelectionViewController.h; sourceTree = "<group>"; };
-		0F281E921A8691CF006CAC60 /* ThumbnailSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailSelectionViewController.m; sourceTree = "<group>"; };
-		0F281E941A869D3F006CAC60 /* defaultMoney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultMoney.png; sourceTree = "<group>"; };
-		0F281E951A869D3F006CAC60 /* defaultMoney@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultMoney@2x.png"; sourceTree = "<group>"; };
-		0F281E9A1A86A169006CAC60 /* defaultThing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultThing.png; sourceTree = "<group>"; };
-		0F281E9B1A86A169006CAC60 /* defaultThing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultThing@2x.png"; sourceTree = "<group>"; };
 		0F34DE0A19F3C3BC00FFE8BB /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		0F34DE0B19F3C3BC00FFE8BB /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		0F34DE0D19F3C46E00FFE8BB /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
@@ -68,20 +62,26 @@
 		0F35C39319F439AE008D2804 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerViewController.h; path = Balance/ReusableControllers/DatePickerViewController.h; sourceTree = SOURCE_ROOT; };
 		0F35C39419F439AE008D2804 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerViewController.m; path = Balance/ReusableControllers/DatePickerViewController.m; sourceTree = SOURCE_ROOT; };
 		0F35C39619F439C3008D2804 /* DatePicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DatePicker.storyboard; path = Balance/ReusableControllers/DatePicker.storyboard; sourceTree = SOURCE_ROOT; };
-		0F3723071A83FFFB00C162B9 /* balanceHomeMidTotal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balanceHomeMidTotal.png; sourceTree = "<group>"; };
 		0F3734F81A80E7D800A85150 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		0F3734F91A80E7D800A85150 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		0F3734FF1A810B5300A85150 /* graphArrow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = graphArrow.jpg; sourceTree = "<group>"; };
-		0F3BD7F31A85496400BB5A16 /* dollar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dollar.jpg; sourceTree = "<group>"; };
 		0F3BD7F51A8561CD00BB5A16 /* UIImage+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Size.h"; sourceTree = "<group>"; };
 		0F3BD7F61A8561CD00BB5A16 /* UIImage+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Size.m"; sourceTree = "<group>"; };
-		0F4551351A83AA5F00E6BF4B /* balanceCellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balanceCellBackground.png; sourceTree = "<group>"; };
-		0F6FADAD1A2DD5A900CEC3B6 /* PersonSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonSelectionViewController.h; sourceTree = "<group>"; };
-		0F6FADAE1A2DD5A900CEC3B6 /* PersonSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonSelectionViewController.m; sourceTree = "<group>"; };
-		0F6FADB01A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonSelectionTableViewCell.h; sourceTree = "<group>"; };
-		0F6FADB11A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonSelectionTableViewCell.m; sourceTree = "<group>"; };
-		0F8484DD1A30593E0076EF34 /* PersonCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCreateViewController.h; sourceTree = "<group>"; };
-		0F8484DE1A30593E0076EF34 /* PersonCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCreateViewController.m; sourceTree = "<group>"; };
+		0F420E861B94B3900098C4A1 /* balanceCellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balanceCellBackground.png; sourceTree = "<group>"; };
+		0F420E871B94B3900098C4A1 /* balanceHomeMidTotal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balanceHomeMidTotal.png; sourceTree = "<group>"; };
+		0F420E881B94B3900098C4A1 /* defaultMoney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultMoney.png; sourceTree = "<group>"; };
+		0F420E891B94B3900098C4A1 /* defaultMoney@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultMoney@2x.png"; sourceTree = "<group>"; };
+		0F420E8A1B94B3900098C4A1 /* defaultThing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultThing.png; sourceTree = "<group>"; };
+		0F420E8B1B94B3900098C4A1 /* defaultThing@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultThing@2x.png"; sourceTree = "<group>"; };
+		0F420E8C1B94B3900098C4A1 /* dollar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dollar.jpg; sourceTree = "<group>"; };
+		0F420E8D1B94B3900098C4A1 /* graphArrow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = graphArrow.jpg; sourceTree = "<group>"; };
+		0F420E961B94C05C0098C4A1 /* ThumbnailSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailSelectionViewController.h; sourceTree = "<group>"; };
+		0F420E971B94C05C0098C4A1 /* ThumbnailSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailSelectionViewController.m; sourceTree = "<group>"; };
+		0F420E991B94C0740098C4A1 /* PersonCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCreateViewController.h; sourceTree = "<group>"; };
+		0F420E9A1B94C0740098C4A1 /* PersonCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCreateViewController.m; sourceTree = "<group>"; };
+		0F420E9B1B94C0740098C4A1 /* PersonSelectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonSelectionTableViewCell.h; sourceTree = "<group>"; };
+		0F420E9C1B94C0740098C4A1 /* PersonSelectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonSelectionTableViewCell.m; sourceTree = "<group>"; };
+		0F420E9D1B94C0740098C4A1 /* PersonSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonSelectionViewController.h; sourceTree = "<group>"; };
+		0F420E9E1B94C0740098C4A1 /* PersonSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonSelectionViewController.m; sourceTree = "<group>"; };
 		0FA1EE2319D80FC200D4DC66 /* ItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewCell.h; sourceTree = "<group>"; };
 		0FA1EE2419D80FC200D4DC66 /* ItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewCell.m; sourceTree = "<group>"; };
 		0FABE0B119D3F36B00B9A7D7 /* Balance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Balance.xcdatamodel; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 		0F281E901A8691B1006CAC60 /* Thumbnails */ = {
 			isa = PBXGroup;
 			children = (
-				0F281E911A8691CF006CAC60 /* ThumbnailSelectionViewController.h */,
-				0F281E921A8691CF006CAC60 /* ThumbnailSelectionViewController.m */,
+				0F420E961B94C05C0098C4A1 /* ThumbnailSelectionViewController.h */,
+				0F420E971B94C05C0098C4A1 /* ThumbnailSelectionViewController.m */,
 			);
 			path = Thumbnails;
 			sourceTree = "<group>";
@@ -144,14 +144,14 @@
 		0F3478FB1A80190D00927480 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0F281E941A869D3F006CAC60 /* defaultMoney.png */,
-				0F281E951A869D3F006CAC60 /* defaultMoney@2x.png */,
-				0F281E9A1A86A169006CAC60 /* defaultThing.png */,
-				0F281E9B1A86A169006CAC60 /* defaultThing@2x.png */,
-				0F3BD7F31A85496400BB5A16 /* dollar.jpg */,
-				0F4551351A83AA5F00E6BF4B /* balanceCellBackground.png */,
-				0F3723071A83FFFB00C162B9 /* balanceHomeMidTotal.png */,
-				0F3734FF1A810B5300A85150 /* graphArrow.jpg */,
+				0F420E861B94B3900098C4A1 /* balanceCellBackground.png */,
+				0F420E871B94B3900098C4A1 /* balanceHomeMidTotal.png */,
+				0F420E881B94B3900098C4A1 /* defaultMoney.png */,
+				0F420E891B94B3900098C4A1 /* defaultMoney@2x.png */,
+				0F420E8A1B94B3900098C4A1 /* defaultThing.png */,
+				0F420E8B1B94B3900098C4A1 /* defaultThing@2x.png */,
+				0F420E8C1B94B3900098C4A1 /* dollar.jpg */,
+				0F420E8D1B94B3900098C4A1 /* graphArrow.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -177,12 +177,12 @@
 		0F6FADAC1A2DD57700CEC3B6 /* Persons */ = {
 			isa = PBXGroup;
 			children = (
-				0F6FADAD1A2DD5A900CEC3B6 /* PersonSelectionViewController.h */,
-				0F6FADAE1A2DD5A900CEC3B6 /* PersonSelectionViewController.m */,
-				0F6FADB01A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.h */,
-				0F6FADB11A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m */,
-				0F8484DD1A30593E0076EF34 /* PersonCreateViewController.h */,
-				0F8484DE1A30593E0076EF34 /* PersonCreateViewController.m */,
+				0F420E991B94C0740098C4A1 /* PersonCreateViewController.h */,
+				0F420E9A1B94C0740098C4A1 /* PersonCreateViewController.m */,
+				0F420E9D1B94C0740098C4A1 /* PersonSelectionViewController.h */,
+				0F420E9E1B94C0740098C4A1 /* PersonSelectionViewController.m */,
+				0F420E9B1B94C0740098C4A1 /* PersonSelectionTableViewCell.h */,
+				0F420E9C1B94C0740098C4A1 /* PersonSelectionTableViewCell.m */,
 			);
 			path = Persons;
 			sourceTree = "<group>";
@@ -412,19 +412,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F420E921B94B3900098C4A1 /* defaultThing.png in Resources */,
+				0F420E901B94B3900098C4A1 /* defaultMoney.png in Resources */,
+				0F420E951B94B3900098C4A1 /* graphArrow.jpg in Resources */,
+				0F420E8E1B94B3900098C4A1 /* balanceCellBackground.png in Resources */,
 				0FF20F4A19CD8FDF002776F4 /* Main.storyboard in Resources */,
 				0FF20F4F19CD8FDF002776F4 /* LaunchScreen.xib in Resources */,
-				0F281E9C1A86A169006CAC60 /* defaultThing.png in Resources */,
-				0F281E961A869D3F006CAC60 /* defaultMoney.png in Resources */,
-				0F3735001A810B5300A85150 /* graphArrow.jpg in Resources */,
+				0F420E8F1B94B3900098C4A1 /* balanceHomeMidTotal.png in Resources */,
+				0F420E931B94B3900098C4A1 /* defaultThing@2x.png in Resources */,
+				0F420E941B94B3900098C4A1 /* dollar.jpg in Resources */,
 				0FF20F7A19CDDC5F002776F4 /* NewEntry.storyboard in Resources */,
-				0F3723081A83FFFB00C162B9 /* balanceHomeMidTotal.png in Resources */,
-				0F4551361A83AA5F00E6BF4B /* balanceCellBackground.png in Resources */,
-				0F281E9D1A86A169006CAC60 /* defaultThing@2x.png in Resources */,
+				0F420E911B94B3900098C4A1 /* defaultMoney@2x.png in Resources */,
 				0FF20F4C19CD8FDF002776F4 /* Images.xcassets in Resources */,
-				0F281E971A869D3F006CAC60 /* defaultMoney@2x.png in Resources */,
 				0F35C39719F439C3008D2804 /* DatePicker.storyboard in Resources */,
-				0F3BD7F41A85496400BB5A16 /* dollar.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F6FADAF1A2DD5A900CEC3B6 /* PersonSelectionViewController.m in Sources */,
-				0F8484DF1A30593E0076EF34 /* PersonCreateViewController.m in Sources */,
 				0F34DE0F19F3C46E00FFE8BB /* Item.m in Sources */,
 				0FF20F6F19CDAA95002776F4 /* BalanceViewController.m in Sources */,
 				0FA1EE2519D80FC200D4DC66 /* ItemCollectionViewCell.m in Sources */,
@@ -452,15 +450,17 @@
 				0FABE0B219D3F36B00B9A7D7 /* Balance.xcdatamodeld in Sources */,
 				0FB1A7E819EC4A0D0031B49F /* UIColor+CustomColors.m in Sources */,
 				0FABE0BD19D43D6700B9A7D7 /* CoreDataManager.m in Sources */,
-				0F6FADB21A2DEDAA00CEC3B6 /* PersonSelectionTableViewCell.m in Sources */,
 				0F35C39519F439AE008D2804 /* DatePickerViewController.m in Sources */,
+				0F420EA01B94C0740098C4A1 /* PersonSelectionTableViewCell.m in Sources */,
+				0F420EA11B94C0740098C4A1 /* PersonSelectionViewController.m in Sources */,
+				0F420E9F1B94C0740098C4A1 /* PersonCreateViewController.m in Sources */,
 				0FF20F7619CDDA86002776F4 /* NewEntryViewController.m in Sources */,
 				0F34DE0C19F3C3BC00FFE8BB /* Person.m in Sources */,
 				0F3BD7F71A8561CD00BB5A16 /* UIImage+Size.m in Sources */,
 				0F3734FA1A80E7D800A85150 /* UIImage+ImageEffects.m in Sources */,
 				0FF20F3E19CD8FDF002776F4 /* AppDelegate.m in Sources */,
 				0FF20F3B19CD8FDF002776F4 /* main.m in Sources */,
-				0F281E931A8691CF006CAC60 /* ThumbnailSelectionViewController.m in Sources */,
+				0F420E981B94C05C0098C4A1 /* ThumbnailSelectionViewController.m in Sources */,
 				0FF20F4119CD8FDF002776F4 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

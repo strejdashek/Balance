@@ -109,6 +109,17 @@
     NSData *pngData = [NSData dataWithContentsOfFile:[[Common thumbnailsDirPath] stringByAppendingPathComponent:[item thumbnailName]]];
     cell.personPhotoIV.image = [UIImage imageWithData:pngData];
     
+    //date
+    NSDate *deadline = [item deadline];
+    if (deadline)
+    {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MM/dd/yyyy"];
+        [cell.deadlineLbl setText:[formatter stringFromDate:[item deadline]]];
+    }
+    else
+        [cell.deadlineLbl setText:@""];
+    
     return cell;
 }
 
@@ -194,6 +205,9 @@
         predicate = [NSPredicate predicateWithFormat:@"type == %d",LiabilityType];
     
     self.items = [NSMutableArray arrayWithArray:[[CoreDataManager sharedManager] executeFetchRequestSimple:@"Item" withPredicate:predicate]];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"deadline" ascending:TRUE];
+    [self.items sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
     if (includeCollectionView)
         [self.collectionViewItems reloadData];

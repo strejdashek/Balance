@@ -65,7 +65,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Person *person = [self.persons objectAtIndex:indexPath.row];
-    NSLog(@"%@",person);
     [self.delegatePersonSelectionVC personSelectionViewController:self didSelectPerson:person];
     [self.navigationController popViewControllerAnimated:YES];
 }

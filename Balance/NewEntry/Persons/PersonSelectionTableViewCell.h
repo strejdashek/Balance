@@ -10,9 +10,7 @@
 
 @interface PersonSelectionTableViewCell : UITableViewCell
 
-
 @property (weak, nonatomic) IBOutlet UILabel *personNameLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *personFaceIV;
-
 
 @end
